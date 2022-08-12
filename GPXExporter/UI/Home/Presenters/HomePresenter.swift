@@ -71,7 +71,10 @@ extension HomePresenter: HomePresenterProtocol {
     }
 
     func didSelect(_ workout: HKWorkout) {
-        router.showDetail(for: workout)
+        router.showDetail(
+            for: workout,
+            healtKitHelper: healthKitHelper
+        )
     }
 }
 

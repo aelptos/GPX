@@ -6,7 +6,7 @@ import UIKit
 import HealthKit
 
 protocol RouterProtocol {
-    func showDetail(for workout: HKWorkout)
+    func showDetail(for workout: HKWorkout, healtKitHelper: HealthKitHelperProtocol)
     func showProgress()
     func hideProgress()
 }
@@ -21,9 +21,10 @@ final class Router {
 }
 
 extension Router: RouterProtocol {
-    func showDetail(for workout: HKWorkout) {
+    func showDetail(for workout: HKWorkout, healtKitHelper: HealthKitHelperProtocol) {
         let presenter = DetailPresenter(
             router: self,
+            healthKitHelper: healtKitHelper,
             workout: workout
         )
         let controller = DetailViewController(
