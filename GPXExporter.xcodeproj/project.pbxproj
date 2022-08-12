@@ -20,6 +20,20 @@
 		8224C6C128A68EF5008CA973 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C028A68EF5008CA973 /* HomePresenter.swift */; };
 		8224C6C328A69009008CA973 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C228A69009008CA973 /* HomeViewModel.swift */; };
 		8224C6C728A69644008CA973 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C628A69644008CA973 /* LoadingViewController.swift */; };
+		8224C6CA28A69ABE008CA973 /* LoadingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C928A69ABE008CA973 /* LoadingCellView.swift */; };
+		8224C6CC28A69BA5008CA973 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6CB28A69BA5008CA973 /* LoadingTableViewCell.swift */; };
+		8224C6CF28A69BC2008CA973 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6CE28A69BC2008CA973 /* ReusableCell.swift */; };
+		8224C6D228A69C16008CA973 /* UITableViewCell+SwifUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6D128A69C16008CA973 /* UITableViewCell+SwifUI.swift */; };
+		8224C6D428A69DAA008CA973 /* UITableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6D328A69DAA008CA973 /* UITableView+ReusableCell.swift */; };
+		8224C6D928A69EDE008CA973 /* CellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6D828A69EDE008CA973 /* CellFactory.swift */; };
+		8224C6DB28A69FEB008CA973 /* HomeViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6DA28A69FEB008CA973 /* HomeViewCellFactory.swift */; };
+		8224C6DF28A6A20D008CA973 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6DE28A6A20D008CA973 /* MessageTableViewCell.swift */; };
+		8224C6E128A6A241008CA973 /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6E028A6A241008CA973 /* MessageCellView.swift */; };
+		8224C6E528A6A370008CA973 /* TableSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6E428A6A370008CA973 /* TableSource.swift */; };
+		8224C6E728A6A7C5008CA973 /* TableSourceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6E628A6A7C5008CA973 /* TableSourceSection.swift */; };
+		8224C6E928A6A7D5008CA973 /* TableSourceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6E828A6A7D5008CA973 /* TableSourceRow.swift */; };
+		8224C6EC28A6AAF8008CA973 /* WorkoutCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6EB28A6AAF8008CA973 /* WorkoutCellView.swift */; };
+		8224C6EE28A6ABAF008CA973 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6ED28A6ABAF008CA973 /* WorkoutTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +52,20 @@
 		8224C6C028A68EF5008CA973 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8224C6C228A69009008CA973 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8224C6C628A69644008CA973 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		8224C6C928A69ABE008CA973 /* LoadingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCellView.swift; sourceTree = "<group>"; };
+		8224C6CB28A69BA5008CA973 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		8224C6CE28A69BC2008CA973 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		8224C6D128A69C16008CA973 /* UITableViewCell+SwifUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+SwifUI.swift"; sourceTree = "<group>"; };
+		8224C6D328A69DAA008CA973 /* UITableView+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableCell.swift"; sourceTree = "<group>"; };
+		8224C6D828A69EDE008CA973 /* CellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFactory.swift; sourceTree = "<group>"; };
+		8224C6DA28A69FEB008CA973 /* HomeViewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCellFactory.swift; sourceTree = "<group>"; };
+		8224C6DE28A6A20D008CA973 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		8224C6E028A6A241008CA973 /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
+		8224C6E428A6A370008CA973 /* TableSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSource.swift; sourceTree = "<group>"; };
+		8224C6E628A6A7C5008CA973 /* TableSourceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSourceSection.swift; sourceTree = "<group>"; };
+		8224C6E828A6A7D5008CA973 /* TableSourceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSourceRow.swift; sourceTree = "<group>"; };
+		8224C6EB28A6AAF8008CA973 /* WorkoutCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCellView.swift; sourceTree = "<group>"; };
+		8224C6ED28A6ABAF008CA973 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +143,7 @@
 		8224C6A528A67205008CA973 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8224C6C828A69AAC008CA973 /* Cells */,
 				8224C68E28A66CCA008CA973 /* HomeViewController.swift */,
 			);
 			path = Views;
@@ -180,7 +209,11 @@
 		8224C6C428A69633008CA973 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				8224C6C528A6963A008CA973 /* Loading */,
+				8224C6E228A6A35D008CA973 /* Components */,
+				8224C6D628A69EBB008CA973 /* Controllers */,
+				8224C6D028A69C03008CA973 /* Extensions */,
+				8224C6CD28A69BB8008CA973 /* Protocols */,
+				8224C6D828A69EDE008CA973 /* CellFactory.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -191,6 +224,87 @@
 				8224C6C628A69644008CA973 /* LoadingViewController.swift */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		8224C6C828A69AAC008CA973 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6DC28A6A1F0008CA973 /* Loading */,
+				8224C6DD28A6A1FE008CA973 /* Message */,
+				8224C6EA28A6AADB008CA973 /* Workout */,
+				8224C6DA28A69FEB008CA973 /* HomeViewCellFactory.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8224C6CD28A69BB8008CA973 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6CE28A69BC2008CA973 /* ReusableCell.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8224C6D028A69C03008CA973 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6D328A69DAA008CA973 /* UITableView+ReusableCell.swift */,
+				8224C6D128A69C16008CA973 /* UITableViewCell+SwifUI.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8224C6D628A69EBB008CA973 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6C528A6963A008CA973 /* Loading */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8224C6DC28A6A1F0008CA973 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6C928A69ABE008CA973 /* LoadingCellView.swift */,
+				8224C6CB28A69BA5008CA973 /* LoadingTableViewCell.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		8224C6DD28A6A1FE008CA973 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6E028A6A241008CA973 /* MessageCellView.swift */,
+				8224C6DE28A6A20D008CA973 /* MessageTableViewCell.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		8224C6E228A6A35D008CA973 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6E328A6A363008CA973 /* TableSource */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8224C6E328A6A363008CA973 /* TableSource */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6E428A6A370008CA973 /* TableSource.swift */,
+				8224C6E828A6A7D5008CA973 /* TableSourceRow.swift */,
+				8224C6E628A6A7C5008CA973 /* TableSourceSection.swift */,
+			);
+			path = TableSource;
+			sourceTree = "<group>";
+		};
+		8224C6EA28A6AADB008CA973 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6EB28A6AAF8008CA973 /* WorkoutCellView.swift */,
+				8224C6ED28A6ABAF008CA973 /* WorkoutTableViewCell.swift */,
+			);
+			path = Workout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,15 +400,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				8224C6B028A68776008CA973 /* WorkoutViewModel.swift in Sources */,
+				8224C6E728A6A7C5008CA973 /* TableSourceSection.swift in Sources */,
+				8224C6E528A6A370008CA973 /* TableSource.swift in Sources */,
 				8224C6C328A69009008CA973 /* HomeViewModel.swift in Sources */,
+				8224C6E928A6A7D5008CA973 /* TableSourceRow.swift in Sources */,
+				8224C6CC28A69BA5008CA973 /* LoadingTableViewCell.swift in Sources */,
+				8224C6E128A6A241008CA973 /* MessageCellView.swift in Sources */,
+				8224C6DB28A69FEB008CA973 /* HomeViewCellFactory.swift in Sources */,
 				8224C6B728A68D55008CA973 /* WorkoutViewModelBuilder.swift in Sources */,
+				8224C6EC28A6AAF8008CA973 /* WorkoutCellView.swift in Sources */,
+				8224C6D928A69EDE008CA973 /* CellFactory.swift in Sources */,
+				8224C6D228A69C16008CA973 /* UITableViewCell+SwifUI.swift in Sources */,
 				8224C68F28A66CCA008CA973 /* HomeViewController.swift in Sources */,
 				8224C6BE28A68E80008CA973 /* Router.swift in Sources */,
 				8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */,
 				8224C6A928A67312008CA973 /* HealthKitHelper.swift in Sources */,
+				8224C6DF28A6A20D008CA973 /* MessageTableViewCell.swift in Sources */,
 				8224C6C728A69644008CA973 /* LoadingViewController.swift in Sources */,
+				8224C6CA28A69ABE008CA973 /* LoadingCellView.swift in Sources */,
+				8224C6EE28A6ABAF008CA973 /* WorkoutTableViewCell.swift in Sources */,
+				8224C6D428A69DAA008CA973 /* UITableView+ReusableCell.swift in Sources */,
 				8224C68B28A66CCA008CA973 /* AppDelegate.swift in Sources */,
 				8224C6C128A68EF5008CA973 /* HomePresenter.swift in Sources */,
+				8224C6CF28A69BC2008CA973 /* ReusableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,9 +24,17 @@ private extension AppDelegate {
         let healthKitHelper = HealthKitHelper()
         let navigationController = UINavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
-        let router = Router(navigationController: navigationController)
-        let presenter = HomePresenter(router: router, healthKitHelper: healthKitHelper)
-        let controller = HomeViewController(presenter: presenter)
+        let router = Router(
+            navigationController: navigationController
+        )
+        let presenter = HomePresenter(
+            router: router,
+            healthKitHelper: healthKitHelper
+        )
+        let controller = HomeViewController(
+            presenter: presenter,
+            cellFactory: HomeViewCellFactory()
+        )
         presenter.view = controller
         navigationController.viewControllers = [controller]
         return navigationController

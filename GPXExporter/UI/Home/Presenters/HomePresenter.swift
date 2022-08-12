@@ -36,6 +36,7 @@ final class HomePresenter {
 
 extension HomePresenter: HomePresenterProtocol {
     func viewDidLoad() {
+        view?.prepareView()
         view?.update(.initial)
     }
 
