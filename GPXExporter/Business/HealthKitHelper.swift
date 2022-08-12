@@ -4,6 +4,7 @@
 
 import Foundation
 import HealthKit
+import CoreLocation
 
 protocol HealthKitHelperProtocol {
     func isHealthDataAvailable() -> Bool
@@ -75,18 +76,33 @@ extension HealthKitHelper: HealthKitHelperProtocol {
                 return
             }
 
-            // Process the initial route data here.
-            print("\(String(describing: samples))")
-        }
-        query.updateHandler = { (query, samples, deleted, anchor, error) in
-            if let error = error {
+            guard let samples = samples as? [HKWorkoutRoute], let route = samples.first else {
                 // TODO: handle
-                print("The update query failed: \(error)")
+                print("No route")
                 return
             }
 
-            // Process updates or additions here.
-            print("\(String(describing: samples))")
+            self.fetchLocations(with: route)
+        }
+        store.execute(query)
+    }
+    
+    func fetchLocations(with route: HKWorkoutRoute) {
+        var output = [CLLocation]()
+        let query = HKWorkoutRouteQuery(route: route) { (query, locations, done, error) in
+            if let error = error {
+                // TODO: handle
+                print("The initial query failed: \(error)")
+                return
+            }
+            
+            if let locations = locations {
+                output.append(contentsOf: locations)
+            }
+            
+            if done {
+                print("Got locations: \(output)")
+            }
         }
         store.execute(query)
     }
