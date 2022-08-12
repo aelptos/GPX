@@ -21,15 +21,20 @@ final class Router {
 }
 
 extension Router: RouterProtocol {
-    @discardableResult
-    func synchronized<T>(_ lock: AnyObject, closure: () -> T) -> T {
-        objc_sync_enter(lock)
-        defer { objc_sync_exit(lock) }
-
-        return closure()
+    func showDetail(for workout: HKWorkout) {
+        let presenter = DetailPresenter(
+            router: self,
+            workout: workout
+        )
+        let controller = DetailViewController(
+            presenter: presenter
+        )
+        presenter.view = controller
+        navigationController.pushViewController(
+            controller,
+            animated: true
+        )
     }
-
-    func showDetail(for workout: HKWorkout) {}
 
     func showProgress() {
         synchronized(self) {
@@ -39,7 +44,11 @@ extension Router: RouterProtocol {
                 let loadingVC = LoadingViewController()
                 loadingVC.modalPresentationStyle = .overCurrentContext
                 loadingVC.modalTransitionStyle = .crossDissolve
-                self.navigationController.present(loadingVC, animated: true, completion: nil)
+                self.navigationController.present(
+                    loadingVC,
+                    animated: true,
+                    completion: nil
+                )
             }
         }
     }
@@ -53,5 +62,15 @@ extension Router: RouterProtocol {
                 }
             }
         }
+    }
+}
+
+private extension Router {
+    @discardableResult
+    func synchronized<T>(_ lock: AnyObject, closure: () -> T) -> T {
+        objc_sync_enter(lock)
+        defer { objc_sync_exit(lock) }
+
+        return closure()
     }
 }

@@ -5,17 +5,18 @@
 import UIKit
 import HealthKit
 
-final class DetailViewController: UITableViewController {
-    private let healthKitHelper: HealthKitHelperProtocol
-    private let workout: HKWorkout
+protocol DetailViewProtocol: AnyObject {
+    func prepareView()
+}
+
+final class DetailViewController: UIViewController {
+    private let presenter: DetailPresenterProtocol
 
     init(
-        healthKitHelper: HealthKitHelperProtocol,
-        workout: HKWorkout
+        presenter: DetailPresenterProtocol
     ) {
-        self.healthKitHelper = healthKitHelper
-        self.workout = workout
-        super.init(style: .insetGrouped)
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
     }
 
     @available(*, unavailable)
@@ -26,6 +27,12 @@ final class DetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presenter.viewDidLoad()
+    }
+}
+
+extension DetailViewController: DetailViewProtocol {
+    func prepareView() {
         setupNavigation()
     }
 }
@@ -33,14 +40,5 @@ final class DetailViewController: UITableViewController {
 private extension DetailViewController {
     func setupNavigation() {
         title = "Detail"
-        navigationItem.largeTitleDisplayMode = .never
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "Export",
-            style: .plain,
-            target: self,
-            action: #selector(onExportButtonTap)
-        )
     }
-
-    @objc func onExportButtonTap() {}
 }

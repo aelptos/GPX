@@ -35,6 +35,7 @@
 		8224C6F028A6BAD1008CA973 /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6EF28A6BAD1008CA973 /* Double+Rounding.swift */; };
 		8224C6F228A6BB05008CA973 /* HKWorkout+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */; };
 		8224C6F528A6BB4F008CA973 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F428A6BB4F008CA973 /* Formatters.swift */; };
+		8224C6F828A6C2B2008CA973 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F728A6C2B2008CA973 /* DetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		8224C6EF28A6BAD1008CA973 /* Double+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounding.swift"; sourceTree = "<group>"; };
 		8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKWorkout+Utils.swift"; sourceTree = "<group>"; };
 		8224C6F428A6BB4F008CA973 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		8224C6F728A6C2B2008CA973 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		8224C6B828A68D96008CA973 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				8224C6F628A6C2A2008CA973 /* Presenters */,
 				8224C6B928A68D9E008CA973 /* Views */,
 			);
 			path = Detail;
@@ -302,6 +305,14 @@
 			path = Workout;
 			sourceTree = "<group>";
 		};
+		8224C6F628A6C2A2008CA973 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6F728A6C2B2008CA973 /* DetailPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -417,6 +428,7 @@
 				8224C6EE28A6ABAF008CA973 /* WorkoutTableViewCell.swift in Sources */,
 				8224C6D428A69DAA008CA973 /* UITableView+ReusableCell.swift in Sources */,
 				8224C68B28A66CCA008CA973 /* AppDelegate.swift in Sources */,
+				8224C6F828A6C2B2008CA973 /* DetailPresenter.swift in Sources */,
 				8224C6C128A68EF5008CA973 /* HomePresenter.swift in Sources */,
 				8224C6CF28A69BC2008CA973 /* ReusableCell.swift in Sources */,
 			);
