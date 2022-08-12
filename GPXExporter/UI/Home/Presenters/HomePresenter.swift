@@ -15,7 +15,15 @@ final class HomePresenter {
 
     private let router: RouterProtocol
     private let healthKitHelper: HealthKitHelperProtocol
-    private var processing = false
+    private var processing = false {
+        didSet {
+            if processing {
+                router.showProgress()
+            } else {
+                router.hideProgress()
+            }
+        }
+    }
 
     init(
         router: RouterProtocol,

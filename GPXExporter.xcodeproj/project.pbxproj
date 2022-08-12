@@ -19,6 +19,7 @@
 		8224C6BE28A68E80008CA973 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6BD28A68E80008CA973 /* Router.swift */; };
 		8224C6C128A68EF5008CA973 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C028A68EF5008CA973 /* HomePresenter.swift */; };
 		8224C6C328A69009008CA973 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C228A69009008CA973 /* HomeViewModel.swift */; };
+		8224C6C728A69644008CA973 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C628A69644008CA973 /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8224C6BD28A68E80008CA973 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8224C6C028A68EF5008CA973 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8224C6C228A69009008CA973 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8224C6C628A69644008CA973 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				8224C6B828A68D96008CA973 /* Detail */,
 				8224C6A428A671FF008CA973 /* Home */,
 				8224C6BC28A68E67008CA973 /* Routers */,
+				8224C6C428A69633008CA973 /* Shared */,
 				8224C69328A66CCB008CA973 /* Assets.xcassets */,
 				8224C69528A66CCB008CA973 /* LaunchScreen.storyboard */,
 			);
@@ -172,6 +175,22 @@
 				8224C6C028A68EF5008CA973 /* HomePresenter.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		8224C6C428A69633008CA973 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6C528A6963A008CA973 /* Loading */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8224C6C528A6963A008CA973 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6C628A69644008CA973 /* LoadingViewController.swift */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +292,7 @@
 				8224C6BE28A68E80008CA973 /* Router.swift in Sources */,
 				8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */,
 				8224C6A928A67312008CA973 /* HealthKitHelper.swift in Sources */,
+				8224C6C728A69644008CA973 /* LoadingViewController.swift in Sources */,
 				8224C68B28A66CCA008CA973 /* AppDelegate.swift in Sources */,
 				8224C6C128A68EF5008CA973 /* HomePresenter.swift in Sources */,
 			);
