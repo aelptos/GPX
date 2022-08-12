@@ -33,11 +33,16 @@ final class HomeViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigation()
-
         presenter.viewDidLoad()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        presenter.viewDidAppear()
+    }
+
+    // MARK: - UITableView data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         tableSource.sectionsCount
     }
@@ -50,6 +55,7 @@ final class HomeViewController: UITableViewController {
         tableSource.row(for: indexPath).makeCell()
     }
 
+    // MARK: - UITableView delegate
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         tableSource.row(for: indexPath).isSelectable ? indexPath : nil
     }
@@ -64,24 +70,30 @@ final class HomeViewController: UITableViewController {
 
 extension HomeViewController: HomeViewProtocol {
     func prepareView() {
+        setupNavigation()
+        setupPullDownToRefresh()
         cellFactory.registerCells(forUseIn: tableView)
     }
 
     func update(_ viewModel: HomeViewModel) {
+        var enableUserInteraction = true
         tableSource.prepareForReuse()
         switch viewModel {
         case .initial:
-            updateTableSource(with: "No workouts, use \"Fetch\" to load some")
+            enableUserInteraction = false
+            updateTableSourceForLoading()
         case .unauthorized:
-            updateTableSource(with: "Access to workouts is unauthorized, pleas check your settings")
+            updateTableSource(with: "Access to workouts is unauthorized\nPlease check your settings")
         case .unavailable:
-            updateTableSource(with: "Health is not available at this time, please check again later")
+            updateTableSource(with: "Health is not available at this time\nPlease check again later")
         case .failedFetch:
-            updateTableSource(with: "Failed to fetch workouts from Healt, please check again later")
+            updateTableSource(with: "Failed to fetch workouts from Health\nPlease check again later")
         case let .results(workouts):
             updateTableSource(with: workouts)
         }
         DispatchQueue.main.async {
+            self.view.isUserInteractionEnabled = enableUserInteraction
+            self.tableView.refreshControl?.endRefreshing()
             self.tableView.reloadData()
         }
     }
@@ -90,16 +102,32 @@ extension HomeViewController: HomeViewProtocol {
 private extension HomeViewController {
     func setupNavigation() {
         title = "GPXExporter"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: "Fetch",
-            style: .plain,
-            target: self,
-            action: #selector(onFetchButtonTap)
-        )
     }
 
-    @objc func onFetchButtonTap() {
+    func setupPullDownToRefresh() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+
+    @objc func onRefresh() {
+        view.isUserInteractionEnabled = false
         presenter.didRequestFetch()
+    }
+
+    func updateTableSourceForLoading() {
+        let section = TableSourceSection()
+        section.add(
+            TableSourceRow(
+                configurationBlock: { [weak self] in
+                    guard let self = self else { return UITableViewCell() }
+                    return self.cellFactory.makeLoadingCell(parent: self)
+                },
+                onTapHandler: nil,
+                isSelectable: false
+            )
+        )
+        tableSource.add(section)
     }
 
     func updateTableSource(with message: String) {
@@ -145,7 +173,7 @@ private extension HomeViewController {
                     configurationBlock: { [weak self] in
                         guard let self = self else { return UITableViewCell() }
                         return self.cellFactory.makeMessageCell(
-                            with: "No workouts in Health, go for a walk or something",
+                            with: "No workout found in Health\nGo for a walk or something",
                             parent: self
                         )
                     },

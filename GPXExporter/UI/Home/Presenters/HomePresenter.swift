@@ -7,6 +7,7 @@ import HealthKit
 
 protocol HomePresenterProtocol {
     func viewDidLoad()
+    func viewDidAppear()
     func didRequestFetch()
     func didSelect(_ workout: HKWorkout)
 }
@@ -16,15 +17,9 @@ final class HomePresenter {
 
     private let router: RouterProtocol
     private let healthKitHelper: HealthKitHelperProtocol
-    private var processing = false {
-        didSet {
-            if processing {
-                router.showProgress()
-            } else {
-                router.hideProgress()
-            }
-        }
-    }
+    private var processing = false
+
+    private var initiaLoadHasBeenDone = false
 
     init(
         router: RouterProtocol,
@@ -39,6 +34,13 @@ extension HomePresenter: HomePresenterProtocol {
     func viewDidLoad() {
         view?.prepareView()
         view?.update(.initial)
+    }
+
+    func viewDidAppear() {
+        guard !initiaLoadHasBeenDone else { return }
+        initiaLoadHasBeenDone = true
+
+        didRequestFetch()
     }
 
     func didRequestFetch() {
