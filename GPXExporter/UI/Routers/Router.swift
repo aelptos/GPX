@@ -7,6 +7,7 @@ import HealthKit
 
 protocol RouterProtocol {
     func showDetail(for workout: HKWorkout, healtKitHelper: HealthKitHelperProtocol)
+    func showError(_ message: String)
     func showProgress()
     func hideProgress()
 }
@@ -35,6 +36,14 @@ extension Router: RouterProtocol {
             controller,
             animated: true
         )
+    }
+
+    func showError(_ message: String) {
+        DispatchQueue.main.async {
+            let controller = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "Ok", style: .default))
+            self.navigationController.present(controller, animated: true)
+        }
     }
 
     func showProgress() {

@@ -36,6 +36,14 @@ extension DetailPresenter: DetailPresenterProtocol {
 
 private extension DetailPresenter {
     func fetchRoute() {
-        healthKitHelper.fetchRoute(for: workout)
+        healthKitHelper.fetchRoute(for: workout) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .failure:
+                self.router.showError("Failed to fetch route")
+            case let .success(locations):
+                self.view?.update(with: locations)
+            }
+        }
     }
 }

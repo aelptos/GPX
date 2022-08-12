@@ -8,11 +8,13 @@ import HealthKit
 
 protocol DetailViewProtocol: AnyObject {
     func prepareView()
+    func update(with locations: [CLLocation])
 }
 
 final class DetailViewController: UIViewController {
     private let presenter: DetailPresenterProtocol
-    private var locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
+    private let mapView = MKMapView()
 
     init(
         presenter: DetailPresenterProtocol
@@ -39,6 +41,12 @@ extension DetailViewController: DetailViewProtocol {
         setupMap()
         setupLocationManager()
     }
+
+    func update(with locations: [CLLocation]) {
+        DispatchQueue.main.async {
+            self.drawRoute(with: locations)
+        }
+    }
 }
 
 private extension DetailViewController {
@@ -48,10 +56,10 @@ private extension DetailViewController {
     }
 
     func setupMap() {
-        let mapView = MKMapView(frame: .zero)
         view.addSubview(mapView)
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.constraintToAllSides(of: view)
+        mapView.delegate = self
         mapView.showsUserLocation = true
 
         let userButtonContainer = UIView()
@@ -83,6 +91,15 @@ private extension DetailViewController {
             break
         }
     }
+
+    func drawRoute(with locations: [CLLocation]) {
+        guard !locations.isEmpty else { return }
+        let coordinates = locations.map { $0.coordinate }
+        let routeOverlay = MKPolyline(coordinates: coordinates, count: coordinates.count)
+        mapView.addOverlay(routeOverlay, level: .aboveRoads)
+        let customEdgePadding = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 20)
+        mapView.setVisibleMapRect(routeOverlay.boundingMapRect, edgePadding: customEdgePadding, animated: true)
+    }
 }
 
 extension DetailViewController: CLLocationManagerDelegate {
@@ -93,5 +110,17 @@ extension DetailViewController: CLLocationManagerDelegate {
         default:
             break
         }
+    }
+}
+
+extension DetailViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKGradientPolylineRenderer(overlay: overlay)
+        renderer.setColors([
+            UIColor(red: 0.02, green: 0.91, blue: 0.05, alpha: 1.00)
+        ], locations: [])
+        renderer.lineCap = .round
+        renderer.lineWidth = 4.0
+        return renderer
     }
 }
