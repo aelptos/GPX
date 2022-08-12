@@ -36,6 +36,7 @@
 		8224C6F228A6BB05008CA973 /* HKWorkout+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */; };
 		8224C6F528A6BB4F008CA973 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F428A6BB4F008CA973 /* Formatters.swift */; };
 		8224C6F828A6C2B2008CA973 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F728A6C2B2008CA973 /* DetailPresenter.swift */; };
+		8224C6FD28A6DF78008CA973 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKWorkout+Utils.swift"; sourceTree = "<group>"; };
 		8224C6F428A6BB4F008CA973 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		8224C6F728A6C2B2008CA973 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 				8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */,
 				8224C6D328A69DAA008CA973 /* UITableView+ReusableCell.swift */,
 				8224C6D128A69C16008CA973 /* UITableViewCell+SwifUI.swift */,
+				8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				8224C6EC28A6AAF8008CA973 /* WorkoutCellView.swift in Sources */,
 				8224C6D928A69EDE008CA973 /* CellFactory.swift in Sources */,
 				8224C6D228A69C16008CA973 /* UITableViewCell+SwifUI.swift in Sources */,
+				8224C6FD28A6DF78008CA973 /* UIView+Constraints.swift in Sources */,
 				8224C68F28A66CCA008CA973 /* HomeViewController.swift in Sources */,
 				8224C6BE28A68E80008CA973 /* Router.swift in Sources */,
 				8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */,
@@ -573,6 +577,7 @@
 				DEVELOPMENT_TEAM = B9F9P95LAY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Required to access workouts and their routes";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required to show your position on the map";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -603,6 +608,7 @@
 				DEVELOPMENT_TEAM = B9F9P95LAY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Required to access workouts and their routes";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required to show your position on the map";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
