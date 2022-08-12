@@ -22,9 +22,13 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 private extension AppDelegate {
     func composeRoot() -> UIViewController {
         let healthKitHelper = HealthKitHelper()
-        let homeController = HomeViewController(healthKitHelper: healthKitHelper)
-        let navigationController = UINavigationController(rootViewController: homeController)
+        let navigationController = UINavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
+        let router = Router(navigationController: navigationController)
+        let presenter = HomePresenter(router: router, healthKitHelper: healthKitHelper)
+        let controller = HomeViewController(presenter: presenter)
+        presenter.view = controller
+        navigationController.viewControllers = [controller]
         return navigationController
     }
 }

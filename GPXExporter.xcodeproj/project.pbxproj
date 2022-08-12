@@ -14,7 +14,11 @@
 		8224C6A128A66D58008CA973 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8224C6A028A66D58008CA973 /* HealthKit.framework */; };
 		8224C6A928A67312008CA973 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6A828A67312008CA973 /* HealthKitHelper.swift */; };
 		8224C6B028A68776008CA973 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6AF28A68776008CA973 /* WorkoutViewModel.swift */; };
-		8224C6B428A6892A008CA973 /* WorkoutViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6B328A6892A008CA973 /* WorkoutViewModelBuilder.swift */; };
+		8224C6B728A68D55008CA973 /* WorkoutViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6B628A68D55008CA973 /* WorkoutViewModelBuilder.swift */; };
+		8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6BA28A68DB2008CA973 /* DetailViewController.swift */; };
+		8224C6BE28A68E80008CA973 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6BD28A68E80008CA973 /* Router.swift */; };
+		8224C6C128A68EF5008CA973 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C028A68EF5008CA973 /* HomePresenter.swift */; };
+		8224C6C328A69009008CA973 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C228A69009008CA973 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +31,11 @@
 		8224C6A028A66D58008CA973 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8224C6A828A67312008CA973 /* HealthKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
 		8224C6AF28A68776008CA973 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
-		8224C6B328A6892A008CA973 /* WorkoutViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutViewModelBuilder.swift; path = GPXExporter/UI/Home/ViewModels/WorkoutViewModelBuilder.swift; sourceTree = SOURCE_ROOT; };
+		8224C6B628A68D55008CA973 /* WorkoutViewModelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewModelBuilder.swift; sourceTree = "<group>"; };
+		8224C6BA28A68DB2008CA973 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8224C6BD28A68E80008CA973 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8224C6C028A68EF5008CA973 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		8224C6C228A69009008CA973 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +89,9 @@
 		8224C6A328A671FC008CA973 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8224C6B828A68D96008CA973 /* Detail */,
 				8224C6A428A671FF008CA973 /* Home */,
+				8224C6BC28A68E67008CA973 /* Routers */,
 				8224C69328A66CCB008CA973 /* Assets.xcassets */,
 				8224C69528A66CCB008CA973 /* LaunchScreen.storyboard */,
 			);
@@ -91,7 +101,8 @@
 		8224C6A428A671FF008CA973 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8224C6B128A68918008CA973 /* Interactors */,
+				8224C6B528A68D55008CA973 /* Interactors */,
+				8224C6BF28A68EE3008CA973 /* Presenters */,
 				8224C6AE28A6875F008CA973 /* ViewModels */,
 				8224C6A528A67205008CA973 /* Views */,
 			);
@@ -117,17 +128,50 @@
 		8224C6AE28A6875F008CA973 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				8224C6C228A69009008CA973 /* HomeViewModel.swift */,
 				8224C6AF28A68776008CA973 /* WorkoutViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		8224C6B128A68918008CA973 /* Interactors */ = {
+		8224C6B528A68D55008CA973 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				8224C6B328A6892A008CA973 /* WorkoutViewModelBuilder.swift */,
+				8224C6B628A68D55008CA973 /* WorkoutViewModelBuilder.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		8224C6B828A68D96008CA973 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6B928A68D9E008CA973 /* Views */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		8224C6B928A68D9E008CA973 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6BA28A68DB2008CA973 /* DetailViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8224C6BC28A68E67008CA973 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6BD28A68E80008CA973 /* Router.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		8224C6BF28A68EE3008CA973 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				8224C6C028A68EF5008CA973 /* HomePresenter.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,10 +267,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8224C6B028A68776008CA973 /* WorkoutViewModel.swift in Sources */,
-				8224C6B428A6892A008CA973 /* WorkoutViewModelBuilder.swift in Sources */,
+				8224C6C328A69009008CA973 /* HomeViewModel.swift in Sources */,
+				8224C6B728A68D55008CA973 /* WorkoutViewModelBuilder.swift in Sources */,
 				8224C68F28A66CCA008CA973 /* HomeViewController.swift in Sources */,
+				8224C6BE28A68E80008CA973 /* Router.swift in Sources */,
+				8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */,
 				8224C6A928A67312008CA973 /* HealthKitHelper.swift in Sources */,
 				8224C68B28A66CCA008CA973 /* AppDelegate.swift in Sources */,
+				8224C6C128A68EF5008CA973 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

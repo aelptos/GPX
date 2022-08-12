@@ -8,7 +8,7 @@ import HealthKit
 protocol HealthKitHelperProtocol {
     func isHealthDataAvailable() -> Bool
     func requestAuthorization(completion: @escaping (Result<Bool, Error>) -> Void)
-    func fetchWorkouts(completion: @escaping (Result<[WorkoutViewModel], Error>) -> Void)
+    func fetchWorkouts(completion: @escaping (Result<[HKWorkout], Error>) -> Void)
 }
 
 final class HealthKitHelper {
@@ -34,7 +34,7 @@ extension HealthKitHelper: HealthKitHelperProtocol {
         }
     }
 
-    func fetchWorkouts(completion: @escaping (Result<[WorkoutViewModel], Error>) -> Void) {
+    func fetchWorkouts(completion: @escaping (Result<[HKWorkout], Error>) -> Void) {
         let sampleType = HKSampleType.workoutType()
         let sortByDate = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         let query = HKSampleQuery(
@@ -54,7 +54,7 @@ extension HealthKitHelper: HealthKitHelperProtocol {
                 return
             }
 
-            completion(.success(WorkoutViewModelBuilder.build(with: workouts)))
+            completion(.success(workouts))
         }
         store.execute(query)
     }

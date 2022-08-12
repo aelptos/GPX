@@ -4,11 +4,15 @@
 
 import UIKit
 
-final class HomeViewController: UITableViewController {
-    private let healthKitHelper: HealthKitHelperProtocol
+protocol HomeViewProtocol: AnyObject {
+    func update(_ viewModel: HomeViewModel)
+}
 
-    init(healthKitHelper: HealthKitHelperProtocol) {
-        self.healthKitHelper = healthKitHelper
+final class HomeViewController: UITableViewController {
+    private let presenter: HomePresenterProtocol
+
+    init(presenter: HomePresenterProtocol) {
+        self.presenter = presenter
         super.init(style: .insetGrouped)
     }
 
@@ -35,8 +39,25 @@ final class HomeViewController: UITableViewController {
         cell.textLabel?.text = "\(workout.date) - \(workout.activity)"
         return cell
     }
-    
-    
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelect(workouts[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension HomeViewController: HomeViewProtocol {
+    func update(_ viewModel: HomeViewModel) {
+        switch viewModel {
+        case .initial, .unauthorized, .unavailable, .failedFetch:
+            workouts = []
+        case let .results(workouts):
+            self.workouts = workouts
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }
 
 private extension HomeViewController {
@@ -51,46 +72,6 @@ private extension HomeViewController {
     }
 
     @objc func onFetchButtonTap() {
-        guard healthKitHelper.isHealthDataAvailable() else {
-            showError(with: "Health data is not available")
-            return
-        }
-
-        healthKitHelper.requestAuthorization { [weak self] result in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                switch result {
-                case let .failure(error):
-                    self.showError(with: "Authorization failed with \(error)")
-                case let .success(status):
-                    guard status else {
-                        self.showError(with: "Authorization failed")
-                        return
-                    }
-                    self.fetchWorkouts()
-                }
-            }
-        }
-    }
-
-    func showError(with message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default))
-        present(alert, animated: true)
-    }
-
-    func fetchWorkouts() {
-        healthKitHelper.fetchWorkouts { [weak self] result in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                switch result {
-                case let .failure(error):
-                    self.showError(with: "Authorization failed with \(error)")
-                case let .success(workouts):
-                    self.workouts = workouts
-                    self.tableView.reloadData()
-                }
-            }
-        }
+        presenter.didRequestFetch()
     }
 }
