@@ -3,17 +3,18 @@
 //
 
 import UIKit
+import HealthKit
 
 final class DetailViewController: UITableViewController {
     private let healthKitHelper: HealthKitHelperProtocol
-    private let listViewModel: WorkoutViewModel
+    private let workout: HKWorkout
 
     init(
         healthKitHelper: HealthKitHelperProtocol,
-        listViewModel: WorkoutViewModel
+        workout: HKWorkout
     ) {
         self.healthKitHelper = healthKitHelper
-        self.listViewModel = listViewModel
+        self.workout = workout
         super.init(style: .insetGrouped)
     }
 

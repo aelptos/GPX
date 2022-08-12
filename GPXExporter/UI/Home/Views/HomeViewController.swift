@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import HealthKit
 
 protocol HomeViewProtocol: AnyObject {
     func prepareView()
@@ -119,7 +120,7 @@ private extension HomeViewController {
         tableSource.add(section)
     }
 
-    func updateTableSource(with workouts: [WorkoutViewModel]) {
+    func updateTableSource(with workouts: [HKWorkout]) {
         let section = TableSourceSection()
         for workout in workouts {
             section.add(

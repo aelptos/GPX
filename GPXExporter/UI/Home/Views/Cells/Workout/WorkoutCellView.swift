@@ -6,28 +6,41 @@ import SwiftUI
 import HealthKit
 
 struct WorkoutCellView: View {
-    let viewModel: WorkoutViewModel
+    let workout: HKWorkout
 
     var body: some View {
         HStack {
-            Text("\(viewModel.date) - \(viewModel.activity)")
+            Image(systemName: workout.activityIconName)
+                .font(.title)
+            VStack(alignment: .leading) {
+                Text(workout.humanReadableDuration)
+                Text(workout.humanReadableDistance)
+                    .font(.caption)
+            }
             Spacer()
+            Text(workout.displayDate)
+                .font(.footnote)
         }
         .padding()
     }
 }
 
 struct WorkoutCellView_Previews: PreviewProvider {
+    static var sampleWorkout: HKWorkout = {
+        HKWorkout(
+            activityType: .cycling,
+            start: Date(),
+            end: Date()
+        )
+    }()
+
     static var previews: some View {
-        WorkoutCellView(viewModel: WorkoutViewModel(
-            activity: "Walking",
-            date: "2022-08-12",
-            workout: HKWorkout(
-                activityType: .walking,
-                start: Date(),
-                end: Date()
-            )
-        ))
-            .previewLayout(.sizeThatFits)
+        Group {
+            WorkoutCellView(workout: sampleWorkout)
+                .preferredColorScheme(.light)
+            WorkoutCellView(workout: sampleWorkout)
+                .preferredColorScheme(.dark)
+        }
+        .previewLayout(.sizeThatFits)
     }
 }

@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import HealthKit
 
 final class HomeViewCellFactory: CellFactory {
     override func registerCells(forUseIn tableView: UITableView) {
@@ -24,9 +25,9 @@ final class HomeViewCellFactory: CellFactory {
         return cell
     }
 
-    func makeWorkoutCell(with viewModel: WorkoutViewModel, parent: UIViewController) -> WorkoutTableViewCell {
+    func makeWorkoutCell(with workout: HKWorkout, parent: UIViewController) -> WorkoutTableViewCell {
         let cell: WorkoutTableViewCell = registeredTableView.dequeueReusableCell()
-        cell.configure(with: viewModel, parent: parent)
+        cell.configure(with: workout, parent: parent)
         return cell
     }
 }

@@ -3,9 +3,10 @@
 //
 
 import UIKit
+import HealthKit
 
 protocol RouterProtocol {
-    func showDetail(for workout: WorkoutViewModel)
+    func showDetail(for workout: HKWorkout)
     func showProgress()
     func hideProgress()
 }
@@ -28,7 +29,7 @@ extension Router: RouterProtocol {
         return closure()
     }
 
-    func showDetail(for workout: WorkoutViewModel) {}
+    func showDetail(for workout: HKWorkout) {}
 
     func showProgress() {
         synchronized(self) {

@@ -3,11 +3,12 @@
 //
 
 import Foundation
+import HealthKit
 
 protocol HomePresenterProtocol {
     func viewDidLoad()
     func didRequestFetch()
-    func didSelect(_ workout: WorkoutViewModel)
+    func didSelect(_ workout: HKWorkout)
 }
 
 final class HomePresenter {
@@ -67,7 +68,7 @@ extension HomePresenter: HomePresenterProtocol {
         }
     }
 
-    func didSelect(_ workout: WorkoutViewModel) {
+    func didSelect(_ workout: HKWorkout) {
         router.showDetail(for: workout)
     }
 }
@@ -81,7 +82,7 @@ private extension HomePresenter {
             case .failure:
                 self.view?.update(.failedFetch)
             case let .success(workouts):
-                self.view?.update(.results(WorkoutViewModelBuilder.build(with: workouts)))
+                self.view?.update(.results(workouts))
             }
         }
     }

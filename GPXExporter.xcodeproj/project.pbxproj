@@ -13,8 +13,6 @@
 		8224C69728A66CCB008CA973 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8224C69528A66CCB008CA973 /* LaunchScreen.storyboard */; };
 		8224C6A128A66D58008CA973 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8224C6A028A66D58008CA973 /* HealthKit.framework */; };
 		8224C6A928A67312008CA973 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6A828A67312008CA973 /* HealthKitHelper.swift */; };
-		8224C6B028A68776008CA973 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6AF28A68776008CA973 /* WorkoutViewModel.swift */; };
-		8224C6B728A68D55008CA973 /* WorkoutViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6B628A68D55008CA973 /* WorkoutViewModelBuilder.swift */; };
 		8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6BA28A68DB2008CA973 /* DetailViewController.swift */; };
 		8224C6BE28A68E80008CA973 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6BD28A68E80008CA973 /* Router.swift */; };
 		8224C6C128A68EF5008CA973 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C028A68EF5008CA973 /* HomePresenter.swift */; };
@@ -34,6 +32,9 @@
 		8224C6E928A6A7D5008CA973 /* TableSourceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6E828A6A7D5008CA973 /* TableSourceRow.swift */; };
 		8224C6EC28A6AAF8008CA973 /* WorkoutCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6EB28A6AAF8008CA973 /* WorkoutCellView.swift */; };
 		8224C6EE28A6ABAF008CA973 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6ED28A6ABAF008CA973 /* WorkoutTableViewCell.swift */; };
+		8224C6F028A6BAD1008CA973 /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6EF28A6BAD1008CA973 /* Double+Rounding.swift */; };
+		8224C6F228A6BB05008CA973 /* HKWorkout+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */; };
+		8224C6F528A6BB4F008CA973 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F428A6BB4F008CA973 /* Formatters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +46,6 @@
 		8224C69E28A66D58008CA973 /* GPXExporter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GPXExporter.entitlements; sourceTree = "<group>"; };
 		8224C6A028A66D58008CA973 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8224C6A828A67312008CA973 /* HealthKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
-		8224C6AF28A68776008CA973 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
-		8224C6B628A68D55008CA973 /* WorkoutViewModelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewModelBuilder.swift; sourceTree = "<group>"; };
 		8224C6BA28A68DB2008CA973 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8224C6BD28A68E80008CA973 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8224C6C028A68EF5008CA973 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -66,6 +65,9 @@
 		8224C6E828A6A7D5008CA973 /* TableSourceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSourceRow.swift; sourceTree = "<group>"; };
 		8224C6EB28A6AAF8008CA973 /* WorkoutCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCellView.swift; sourceTree = "<group>"; };
 		8224C6ED28A6ABAF008CA973 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		8224C6EF28A6BAD1008CA973 /* Double+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounding.swift"; sourceTree = "<group>"; };
+		8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKWorkout+Utils.swift"; sourceTree = "<group>"; };
+		8224C6F428A6BB4F008CA973 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +134,6 @@
 		8224C6A428A671FF008CA973 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8224C6B528A68D55008CA973 /* Interactors */,
 				8224C6BF28A68EE3008CA973 /* Presenters */,
 				8224C6AE28A6875F008CA973 /* ViewModels */,
 				8224C6A528A67205008CA973 /* Views */,
@@ -161,17 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				8224C6C228A69009008CA973 /* HomeViewModel.swift */,
-				8224C6AF28A68776008CA973 /* WorkoutViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		8224C6B528A68D55008CA973 /* Interactors */ = {
-			isa = PBXGroup;
-			children = (
-				8224C6B628A68D55008CA973 /* WorkoutViewModelBuilder.swift */,
-			);
-			path = Interactors;
 			sourceTree = "<group>";
 		};
 		8224C6B828A68D96008CA973 /* Detail */ = {
@@ -213,7 +205,6 @@
 				8224C6D628A69EBB008CA973 /* Controllers */,
 				8224C6D028A69C03008CA973 /* Extensions */,
 				8224C6CD28A69BB8008CA973 /* Protocols */,
-				8224C6D828A69EDE008CA973 /* CellFactory.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -248,6 +239,8 @@
 		8224C6D028A69C03008CA973 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8224C6EF28A6BAD1008CA973 /* Double+Rounding.swift */,
+				8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */,
 				8224C6D328A69DAA008CA973 /* UITableView+ReusableCell.swift */,
 				8224C6D128A69C16008CA973 /* UITableViewCell+SwifUI.swift */,
 			);
@@ -284,6 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				8224C6E328A6A363008CA973 /* TableSource */,
+				8224C6D828A69EDE008CA973 /* CellFactory.swift */,
+				8224C6F428A6BB4F008CA973 /* Formatters.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -399,21 +394,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8224C6B028A68776008CA973 /* WorkoutViewModel.swift in Sources */,
 				8224C6E728A6A7C5008CA973 /* TableSourceSection.swift in Sources */,
 				8224C6E528A6A370008CA973 /* TableSource.swift in Sources */,
+				8224C6F228A6BB05008CA973 /* HKWorkout+Utils.swift in Sources */,
+				8224C6F528A6BB4F008CA973 /* Formatters.swift in Sources */,
 				8224C6C328A69009008CA973 /* HomeViewModel.swift in Sources */,
 				8224C6E928A6A7D5008CA973 /* TableSourceRow.swift in Sources */,
 				8224C6CC28A69BA5008CA973 /* LoadingTableViewCell.swift in Sources */,
 				8224C6E128A6A241008CA973 /* MessageCellView.swift in Sources */,
 				8224C6DB28A69FEB008CA973 /* HomeViewCellFactory.swift in Sources */,
-				8224C6B728A68D55008CA973 /* WorkoutViewModelBuilder.swift in Sources */,
 				8224C6EC28A6AAF8008CA973 /* WorkoutCellView.swift in Sources */,
 				8224C6D928A69EDE008CA973 /* CellFactory.swift in Sources */,
 				8224C6D228A69C16008CA973 /* UITableViewCell+SwifUI.swift in Sources */,
 				8224C68F28A66CCA008CA973 /* HomeViewController.swift in Sources */,
 				8224C6BE28A68E80008CA973 /* Router.swift in Sources */,
 				8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */,
+				8224C6F028A6BAD1008CA973 /* Double+Rounding.swift in Sources */,
 				8224C6A928A67312008CA973 /* HealthKitHelper.swift in Sources */,
 				8224C6DF28A6A20D008CA973 /* MessageTableViewCell.swift in Sources */,
 				8224C6C728A69644008CA973 /* LoadingViewController.swift in Sources */,

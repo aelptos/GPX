@@ -3,11 +3,12 @@
 //
 
 import Foundation
+import HealthKit
 
 enum HomeViewModel {
     case initial
     case unavailable
     case unauthorized
     case failedFetch
-    case results([WorkoutViewModel])
+    case results([HKWorkout])
 }
