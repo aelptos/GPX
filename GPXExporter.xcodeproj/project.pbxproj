@@ -39,6 +39,7 @@
 		8224C6FF28A7675C008CA973 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6FE28A7675C008CA973 /* Date+Components.swift */; };
 		8224C70228A767E3008CA973 /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C70128A767E3008CA973 /* Exporter.swift */; };
 		8224C70428A7B07D008CA973 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C70328A7B07D008CA973 /* WorkoutView.swift */; };
+		8224C70928A7CA35008CA973 /* UIApplication+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C70828A7CA35008CA973 /* UIApplication+Icon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		8224C6FE28A7675C008CA973 /* Date+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
 		8224C70128A767E3008CA973 /* Exporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exporter.swift; sourceTree = "<group>"; };
 		8224C70328A7B07D008CA973 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		8224C70828A7CA35008CA973 /* UIApplication+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Icon.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 				8224C6FE28A7675C008CA973 /* Date+Components.swift */,
 				8224C6EF28A6BAD1008CA973 /* Double+Rounding.swift */,
 				8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */,
+				8224C70828A7CA35008CA973 /* UIApplication+Icon.swift */,
 				8224C6D328A69DAA008CA973 /* UITableView+ReusableCell.swift */,
 				8224C6D128A69C16008CA973 /* UITableViewCell+SwifUI.swift */,
 				8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */,
@@ -423,6 +426,7 @@
 				8224C68F28A66CCA008CA973 /* HomeViewController.swift in Sources */,
 				8224C6BE28A68E80008CA973 /* Router.swift in Sources */,
 				8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */,
+				8224C70928A7CA35008CA973 /* UIApplication+Icon.swift in Sources */,
 				8224C70228A767E3008CA973 /* Exporter.swift in Sources */,
 				8224C6F028A6BAD1008CA973 /* Double+Rounding.swift in Sources */,
 				8224C6A928A67312008CA973 /* HealthKitHelper.swift in Sources */,
