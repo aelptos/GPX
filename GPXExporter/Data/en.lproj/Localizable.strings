@@ -5,6 +5,7 @@
 "activity.swam" = "Swam";
 "activity.walked" = "Walked";
 "app.name" = "GPX Exporter";
+"close" = "Close";
 "detail.gpx.export.error" = "Failed to export";
 "detail.route.fetch.error" = "Failed to fetch route";
 "detail.title" = "Detail";
@@ -13,6 +14,7 @@
 "home.health.access.unavailable.error" = "Health is not available at this time\nPlease check again later";
 "home.workouts.empty" = "No workout found in Health\nGo for a walk or something";
 "home.workouts.fetch.error" = "Failed to fetch workouts from Health\nPlease check again later";
+"info.title" = "Info";
 "label.date" = "Date:";
 "label.end" = "End:";
 "label.start" = "Start:";

@@ -9,6 +9,8 @@ protocol RouterProtocol {
     func showDetail(for workout: HKWorkout, healtKitHelper: HealthKitHelperProtocol)
     func showError(_ message: String)
     func showShare(for path: URL)
+    func showInfo()
+    func hideInfo()
     func showProgress()
     func hideProgress()
 }
@@ -50,6 +52,22 @@ extension Router: RouterProtocol {
     func showShare(for path: URL) {
         let controller = UIActivityViewController(activityItems: [path], applicationActivities: [])
         navigationController.present(controller, animated: true)
+    }
+
+    func showInfo() {
+        let presenter = InfoPresenter(
+            router: self
+        )
+        let controller = InfoViewController(
+            presenter: presenter
+        )
+        presenter.view = controller
+        let nav = UINavigationController(rootViewController: controller)
+        navigationController.present(nav, animated: true)
+    }
+
+    func hideInfo() {
+        navigationController.dismiss(animated: true)
     }
 
     func showProgress() {

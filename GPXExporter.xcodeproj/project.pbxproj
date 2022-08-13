@@ -42,6 +42,8 @@
 		8224C70E28A7D209008CA973 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C70D28A7D209008CA973 /* String+Localization.swift */; };
 		8224C71128A7D259008CA973 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8224C71328A7D259008CA973 /* Localizable.strings */; };
 		8224C71628A7D5B7008CA973 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8224C71828A7D5B7008CA973 /* InfoPlist.strings */; };
+		8224C71C28A7DA2C008CA973 /* InfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C71B28A7DA2C008CA973 /* InfoPresenter.swift */; };
+		8224C72028A7DA90008CA973 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C71F28A7DA90008CA973 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		8224C70D28A7D209008CA973 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		8224C71228A7D259008CA973 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8224C71728A7D5B7008CA973 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8224C71B28A7DA2C008CA973 /* InfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPresenter.swift; sourceTree = "<group>"; };
+		8224C71F28A7DA90008CA973 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 			children = (
 				8224C6B828A68D96008CA973 /* Detail */,
 				8224C6A428A671FF008CA973 /* Home */,
+				8224C71928A7DA06008CA973 /* Info */,
 				8224C6BC28A68E67008CA973 /* Routers */,
 				8224C6C428A69633008CA973 /* Shared */,
 				8224C69328A66CCB008CA973 /* Assets.xcassets */,
@@ -347,6 +352,31 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		8224C71928A7DA06008CA973 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				8224C71A28A7DA1B008CA973 /* Presenters */,
+				8224C71D28A7DA78008CA973 /* Views */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		8224C71A28A7DA1B008CA973 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				8224C71B28A7DA2C008CA973 /* InfoPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		8224C71D28A7DA78008CA973 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8224C71F28A7DA90008CA973 /* InfoViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -457,6 +487,7 @@
 				8224C6D228A69C16008CA973 /* UITableViewCell+SwifUI.swift in Sources */,
 				8224C6FD28A6DF78008CA973 /* UIView+Constraints.swift in Sources */,
 				8224C68F28A66CCA008CA973 /* HomeViewController.swift in Sources */,
+				8224C71C28A7DA2C008CA973 /* InfoPresenter.swift in Sources */,
 				8224C6BE28A68E80008CA973 /* Router.swift in Sources */,
 				8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */,
 				8224C70228A767E3008CA973 /* Exporter.swift in Sources */,
@@ -470,6 +501,7 @@
 				8224C68B28A66CCA008CA973 /* AppDelegate.swift in Sources */,
 				8224C6F828A6C2B2008CA973 /* DetailPresenter.swift in Sources */,
 				8224C6C128A68EF5008CA973 /* HomePresenter.swift in Sources */,
+				8224C72028A7DA90008CA973 /* InfoViewController.swift in Sources */,
 				8224C6CF28A69BC2008CA973 /* ReusableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

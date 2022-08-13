@@ -106,6 +106,16 @@ extension HomeViewController: HomeViewProtocol {
 private extension HomeViewController {
     func setupNavigation() {
         title = "app.name".localized
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: .init(systemName: "info.circle"),
+            style: .plain,
+            target: self,
+            action: #selector(onInfoButtonTap)
+        )
+    }
+
+    @objc func onInfoButtonTap() {
+        presenter.didRequestInfo()
     }
 
     func setupPullDownToRefresh() {

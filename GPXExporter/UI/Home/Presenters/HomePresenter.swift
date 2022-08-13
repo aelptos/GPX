@@ -10,6 +10,7 @@ protocol HomePresenterProtocol {
     func viewDidAppear()
     func didRequestFetch()
     func didSelect(_ workout: HKWorkout)
+    func didRequestInfo()
 }
 
 final class HomePresenter {
@@ -75,6 +76,10 @@ extension HomePresenter: HomePresenterProtocol {
             for: workout,
             healtKitHelper: healthKitHelper
         )
+    }
+
+    func didRequestInfo() {
+        router.showInfo()
     }
 }
 
