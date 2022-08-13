@@ -38,6 +38,7 @@
 		8224C6F828A6C2B2008CA973 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F728A6C2B2008CA973 /* DetailPresenter.swift */; };
 		8224C6FD28A6DF78008CA973 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */; };
 		8224C6FF28A7675C008CA973 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6FE28A7675C008CA973 /* Date+Components.swift */; };
+		8224C70228A767E3008CA973 /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C70128A767E3008CA973 /* Exporter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		8224C6F728A6C2B2008CA973 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		8224C6FE28A7675C008CA973 /* Date+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
+		8224C70128A767E3008CA973 /* Exporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		8224C6A628A672D3008CA973 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				8224C70128A767E3008CA973 /* Exporter.swift */,
 				8224C6A828A67312008CA973 /* HealthKitHelper.swift */,
 			);
 			path = Business;
@@ -428,6 +431,7 @@
 				8224C68F28A66CCA008CA973 /* HomeViewController.swift in Sources */,
 				8224C6BE28A68E80008CA973 /* Router.swift in Sources */,
 				8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */,
+				8224C70228A767E3008CA973 /* Exporter.swift in Sources */,
 				8224C6F028A6BAD1008CA973 /* Double+Rounding.swift in Sources */,
 				8224C6A928A67312008CA973 /* HealthKitHelper.swift in Sources */,
 				8224C6DF28A6A20D008CA973 /* MessageTableViewCell.swift in Sources */,

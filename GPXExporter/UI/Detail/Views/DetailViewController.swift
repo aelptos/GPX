@@ -9,6 +9,7 @@ import HealthKit
 protocol DetailViewProtocol: AnyObject {
     func prepareView()
     func update(with locations: [CLLocation])
+    func showExportButton()
 }
 
 final class DetailViewController: UIViewController {
@@ -46,6 +47,14 @@ extension DetailViewController: DetailViewProtocol {
         DispatchQueue.main.async {
             self.drawRoute(with: locations)
         }
+    }
+
+    func showExportButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(onShareButtonTap)
+        )
     }
 }
 
@@ -95,10 +104,27 @@ private extension DetailViewController {
     func drawRoute(with locations: [CLLocation]) {
         guard !locations.isEmpty else { return }
         let coordinates = locations.map { $0.coordinate }
-        let routeOverlay = MKPolyline(coordinates: coordinates, count: coordinates.count)
-        mapView.addOverlay(routeOverlay, level: .aboveRoads)
-        let customEdgePadding = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 20)
-        mapView.setVisibleMapRect(routeOverlay.boundingMapRect, edgePadding: customEdgePadding, animated: true)
+        let overlay = MKPolyline(
+            coordinates: coordinates,
+            count: coordinates.count
+        )
+        mapView.addOverlay(overlay, level: .aboveRoads)
+        let inset: CGFloat = 100
+        let edgePadding = UIEdgeInsets(
+            top: inset,
+            left: inset,
+            bottom: inset,
+            right: inset
+        )
+        mapView.setVisibleMapRect(
+            overlay.boundingMapRect,
+            edgePadding: edgePadding,
+            animated: true
+        )
+    }
+
+    @objc func onShareButtonTap() {
+        presenter.didRequestShare()
     }
 }
 
@@ -116,11 +142,9 @@ extension DetailViewController: CLLocationManagerDelegate {
 extension DetailViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKGradientPolylineRenderer(overlay: overlay)
-        renderer.setColors([
-            UIColor(red: 0.02, green: 0.91, blue: 0.05, alpha: 1.00)
-        ], locations: [])
+        renderer.setColors([view.tintColor], locations: [])
         renderer.lineCap = .round
-        renderer.lineWidth = 4.0
+        renderer.lineWidth = 3.0
         return renderer
     }
 }
