@@ -219,14 +219,6 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		8224C6C528A6963A008CA973 /* Loading */ = {
-			isa = PBXGroup;
-			children = (
-				8224C6C628A69644008CA973 /* LoadingViewController.swift */,
-			);
-			path = Loading;
-			sourceTree = "<group>";
-		};
 		8224C6C828A69AAC008CA973 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,7 +254,7 @@
 		8224C6D628A69EBB008CA973 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8224C6C528A6963A008CA973 /* Loading */,
+				8224C6C628A69644008CA973 /* LoadingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -288,21 +280,13 @@
 		8224C6E228A6A35D008CA973 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				8224C6E328A6A363008CA973 /* TableSource */,
 				8224C6D828A69EDE008CA973 /* CellFactory.swift */,
 				8224C6F428A6BB4F008CA973 /* Formatters.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		8224C6E328A6A363008CA973 /* TableSource */ = {
-			isa = PBXGroup;
-			children = (
 				8224C6E428A6A370008CA973 /* TableSource.swift */,
 				8224C6E828A6A7D5008CA973 /* TableSourceRow.swift */,
 				8224C6E628A6A7C5008CA973 /* TableSourceSection.swift */,
 			);
-			path = TableSource;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		8224C6EA28A6AADB008CA973 /* Workout */ = {
