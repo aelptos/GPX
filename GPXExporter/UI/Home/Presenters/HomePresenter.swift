@@ -87,8 +87,19 @@ private extension HomePresenter {
             case .failure:
                 self.view?.update(.failedFetch)
             case let .success(workouts):
-                self.view?.update(.results(workouts))
+                self.view?.update(.results(self.splitWorkoutsByYear(workouts)))
             }
         }
+    }
+
+    func splitWorkoutsByYear(_ workouts: [HKWorkout]) -> [String: [HKWorkout]] {
+        var output = [String: [HKWorkout]]()
+        for workout in workouts {
+            let year = "\(workout.endDate.year)"
+            var collection = output[year] ?? [HKWorkout]()
+            collection.append(workout)
+            output[year] = collection
+        }
+        return output
     }
 }

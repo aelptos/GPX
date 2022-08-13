@@ -37,6 +37,7 @@
 		8224C6F528A6BB4F008CA973 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F428A6BB4F008CA973 /* Formatters.swift */; };
 		8224C6F828A6C2B2008CA973 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F728A6C2B2008CA973 /* DetailPresenter.swift */; };
 		8224C6FD28A6DF78008CA973 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */; };
+		8224C6FF28A7675C008CA973 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6FE28A7675C008CA973 /* Date+Components.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		8224C6F428A6BB4F008CA973 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		8224C6F728A6C2B2008CA973 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		8224C6FE28A7675C008CA973 /* Date+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 		8224C6D028A69C03008CA973 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8224C6FE28A7675C008CA973 /* Date+Components.swift */,
 				8224C6EF28A6BAD1008CA973 /* Double+Rounding.swift */,
 				8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */,
 				8224C6D328A69DAA008CA973 /* UITableView+ReusableCell.swift */,
@@ -411,6 +414,7 @@
 				8224C6E728A6A7C5008CA973 /* TableSourceSection.swift in Sources */,
 				8224C6E528A6A370008CA973 /* TableSource.swift in Sources */,
 				8224C6F228A6BB05008CA973 /* HKWorkout+Utils.swift in Sources */,
+				8224C6FF28A7675C008CA973 /* Date+Components.swift in Sources */,
 				8224C6F528A6BB4F008CA973 /* Formatters.swift in Sources */,
 				8224C6C328A69009008CA973 /* HomeViewModel.swift in Sources */,
 				8224C6E928A6A7D5008CA973 /* TableSourceRow.swift in Sources */,

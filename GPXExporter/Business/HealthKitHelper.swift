@@ -111,7 +111,7 @@ extension HealthKitHelper: HealthKitHelperProtocol {
         let query = HKWorkoutRouteQuery(
             route: route
         ) { [weak self] (query, locations, done, error) in
-            guard let self = self else { return }
+            guard self != nil else { return }
             if let error = error {
                 completion(.failure(error))
                 return

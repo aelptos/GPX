@@ -55,6 +55,10 @@ final class HomeViewController: UITableViewController {
         tableSource.row(for: indexPath).makeCell()
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        tableSource.section(for: section).headerText
+    }
+
     // MARK: - UITableView delegate
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         tableSource.row(for: indexPath).isSelectable ? indexPath : nil
@@ -88,8 +92,8 @@ extension HomeViewController: HomeViewProtocol {
             updateTableSource(with: "Health is not available at this time\nPlease check again later")
         case .failedFetch:
             updateTableSource(with: "Failed to fetch workouts from Health\nPlease check again later")
-        case let .results(workouts):
-            updateTableSource(with: workouts)
+        case let .results(workoutsPerYear):
+            updateTableSource(with: workoutsPerYear)
         }
         DispatchQueue.main.async {
             self.view.isUserInteractionEnabled = enableUserInteraction
@@ -148,26 +152,32 @@ private extension HomeViewController {
         tableSource.add(section)
     }
 
-    func updateTableSource(with workouts: [HKWorkout]) {
-        let section = TableSourceSection()
-        for workout in workouts {
-            section.add(
-                TableSourceRow(
-                    configurationBlock: { [weak self] in
-                        guard let self = self else { return UITableViewCell() }
-                        return self.cellFactory.makeWorkoutCell(
-                            with: workout,
-                            parent: self
-                        )
-                    },
-                    onTapHandler: { [weak self] _ in
-                        guard let self = self else { return }
-                        self.presenter.didSelect(workout)
-                    }
+    func updateTableSource(with workoutsPerYear: [String: [HKWorkout]]) {
+        for year in workoutsPerYear.keys.sorted(by: { $0 > $1 }) {
+            let section = TableSourceSection()
+            section.headerText = year
+            for workout in workoutsPerYear[year]! {
+                section.add(
+                    TableSourceRow(
+                        configurationBlock: { [weak self] in
+                            guard let self = self else { return UITableViewCell() }
+                            return self.cellFactory.makeWorkoutCell(
+                                with: workout,
+                                parent: self
+                            )
+                        },
+                        onTapHandler: { [weak self] _ in
+                            guard let self = self else { return }
+                            self.presenter.didSelect(workout)
+                        }
+                    )
                 )
-            )
+            }
+            tableSource.add(section)
         }
-        if workouts.isEmpty {
+
+        if workoutsPerYear.isEmpty {
+            let section = TableSourceSection()
             section.add(
                 TableSourceRow(
                     configurationBlock: { [weak self] in
@@ -181,7 +191,7 @@ private extension HomeViewController {
                     isSelectable: false
                 )
             )
+            tableSource.add(section)
         }
-        tableSource.add(section)
     }
 }

@@ -10,5 +10,5 @@ enum HomeViewModel {
     case unavailable
     case unauthorized
     case failedFetch
-    case results([HKWorkout])
+    case results([String: [HKWorkout]])
 }
