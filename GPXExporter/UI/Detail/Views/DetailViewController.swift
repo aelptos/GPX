@@ -69,19 +69,23 @@ private extension DetailViewController {
     func setupMap() {
         view.addSubview(mapView)
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.constraintToAllSides(of: view)
+        mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
+        mapView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32).isActive = true
         mapView.delegate = self
         mapView.showsUserLocation = true
+        mapView.layer.cornerRadius = 5
 
         let userButtonContainer = UIView()
         view.addSubview(userButtonContainer)
         userButtonContainer.translatesAutoresizingMaskIntoConstraints = false
-        userButtonContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
-        userButtonContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
+        userButtonContainer.topAnchor.constraint(equalTo: mapView.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
+        userButtonContainer.leadingAnchor.constraint(equalTo: mapView.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
         userButtonContainer.widthAnchor.constraint(equalToConstant: 42).isActive = true
         userButtonContainer.heightAnchor.constraint(equalToConstant: 42).isActive = true
         userButtonContainer.layer.cornerRadius = 5
-        userButtonContainer.backgroundColor = .systemBackground.withAlphaComponent(0.8)
+        userButtonContainer.backgroundColor = .systemBackground.withAlphaComponent(0.5)
 
         let userButton = MKUserTrackingButton(mapView: mapView)
         userButtonContainer.addSubview(userButton)
