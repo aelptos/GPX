@@ -32,7 +32,7 @@ final class DetailPresenter {
 
 extension DetailPresenter: DetailPresenterProtocol {
     func viewDidLoad() {
-        view?.prepareView(workout)
+        view?.prepareView(with: workout)
         fetchRoute()
     }
 

@@ -8,7 +8,7 @@ import HealthKit
 import SwiftUI
 
 protocol DetailViewProtocol: AnyObject {
-    func prepareView(_ workout: HKWorkout)
+    func prepareView(with workout: HKWorkout)
     func update(with locations: [CLLocation])
     func showExportButton()
 }
@@ -17,7 +17,6 @@ final class DetailViewController: UIViewController {
     private let presenter: DetailPresenterProtocol
     private let locationManager = CLLocationManager()
     private let mapView = MKMapView()
-    private var bannerView: UIView!
 
     init(
         presenter: DetailPresenterProtocol
@@ -39,10 +38,10 @@ final class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: DetailViewProtocol {
-    func prepareView(_ workout: HKWorkout) {
+    func prepareView(with workout: HKWorkout) {
         setupNavigation()
-        setupBanner(workout)
         setupMap()
+        setupBanner(with: workout)
         setupLocationManager()
     }
 
@@ -69,29 +68,15 @@ private extension DetailViewController {
         navigationItem.largeTitleDisplayMode = .never
     }
 
-    func setupBanner(_ workout: HKWorkout) {
-        let host = UIHostingController(rootView: WorkoutCellView(workout: workout))
-        addChild(host)
-        view.addSubview(host.view)
-        host.view.translatesAutoresizingMaskIntoConstraints = false
-        host.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
-        host.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32).isActive = true
-        host.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32).isActive = true
-        host.view.heightAnchor.constraint(equalToConstant: 56).isActive = true
-        host.didMove(toParent: self)
-        bannerView = host.view
-    }
-
     func setupMap() {
         view.addSubview(mapView)
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.topAnchor.constraint(equalTo: bannerView.bottomAnchor, constant: 8).isActive = true
-        mapView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32).isActive = true
-        mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32).isActive = true
-        mapView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32).isActive = true
+        mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        mapView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         mapView.delegate = self
         mapView.showsUserLocation = true
-        mapView.layer.cornerRadius = 5
 
         let userButtonContainer = UIView()
         view.addSubview(userButtonContainer)
@@ -108,6 +93,19 @@ private extension DetailViewController {
         userButton.translatesAutoresizingMaskIntoConstraints = false
         userButton.centerXAnchor.constraint(equalTo: userButtonContainer.centerXAnchor).isActive = true
         userButton.centerYAnchor.constraint(equalTo: userButtonContainer.centerYAnchor).isActive = true
+    }
+
+    func setupBanner(with workout: HKWorkout) {
+        let host = UIHostingController(rootView: WorkoutCellView(workout: workout))
+        addChild(host)
+        view.addSubview(host.view)
+        host.view.translatesAutoresizingMaskIntoConstraints = false
+        host.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
+        host.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40).isActive = true
+        host.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
+        host.view.heightAnchor.constraint(equalToConstant: 76).isActive = true
+        host.didMove(toParent: self)
+        host.view.layer.cornerRadius = 16
     }
 
     func setupLocationManager() {
@@ -131,7 +129,7 @@ private extension DetailViewController {
             count: coordinates.count
         )
         mapView.addOverlay(overlay, level: .aboveRoads)
-        let inset: CGFloat = 100
+        let inset: CGFloat = 50
         let edgePadding = UIEdgeInsets(
             top: inset,
             left: inset,
