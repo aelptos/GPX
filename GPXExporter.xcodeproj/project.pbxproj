@@ -17,7 +17,6 @@
 		8224C6BE28A68E80008CA973 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6BD28A68E80008CA973 /* Router.swift */; };
 		8224C6C128A68EF5008CA973 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C028A68EF5008CA973 /* HomePresenter.swift */; };
 		8224C6C328A69009008CA973 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C228A69009008CA973 /* HomeViewModel.swift */; };
-		8224C6C728A69644008CA973 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C628A69644008CA973 /* LoadingViewController.swift */; };
 		8224C6CA28A69ABE008CA973 /* LoadingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6C928A69ABE008CA973 /* LoadingCellView.swift */; };
 		8224C6CC28A69BA5008CA973 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6CB28A69BA5008CA973 /* LoadingTableViewCell.swift */; };
 		8224C6CF28A69BC2008CA973 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6CE28A69BC2008CA973 /* ReusableCell.swift */; };
@@ -60,7 +59,6 @@
 		8224C6BD28A68E80008CA973 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8224C6C028A68EF5008CA973 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8224C6C228A69009008CA973 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		8224C6C628A69644008CA973 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		8224C6C928A69ABE008CA973 /* LoadingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCellView.swift; sourceTree = "<group>"; };
 		8224C6CB28A69BA5008CA973 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		8224C6CE28A69BC2008CA973 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				8224C6E228A6A35D008CA973 /* Components */,
-				8224C6D628A69EBB008CA973 /* Controllers */,
 				8224C6D028A69C03008CA973 /* Extensions */,
 				8224C6CD28A69BB8008CA973 /* Protocols */,
 				8224C70528A7B4F2008CA973 /* Views */,
@@ -261,14 +258,6 @@
 				8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		8224C6D628A69EBB008CA973 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				8224C6C628A69644008CA973 /* LoadingViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		8224C6DC28A6A1F0008CA973 /* Loading */ = {
@@ -498,7 +487,6 @@
 				8224C6F028A6BAD1008CA973 /* Double+Rounding.swift in Sources */,
 				8224C6A928A67312008CA973 /* HealthKitHelper.swift in Sources */,
 				8224C6DF28A6A20D008CA973 /* MessageTableViewCell.swift in Sources */,
-				8224C6C728A69644008CA973 /* LoadingViewController.swift in Sources */,
 				8224C6CA28A69ABE008CA973 /* LoadingCellView.swift in Sources */,
 				8224C6EE28A6ABAF008CA973 /* WorkoutTableViewCell.swift in Sources */,
 				8224C6D428A69DAA008CA973 /* UITableView+ReusableCell.swift in Sources */,
