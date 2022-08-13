@@ -50,11 +50,13 @@ extension DetailViewController: DetailViewProtocol {
     }
 
     func showExportButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .action,
-            target: self,
-            action: #selector(onShareButtonTap)
-        )
+        DispatchQueue.main.async {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+                barButtonSystemItem: .action,
+                target: self,
+                action: #selector(self.onShareButtonTap)
+            )
+        }
     }
 }
 
