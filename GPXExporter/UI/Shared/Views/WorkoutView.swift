@@ -14,26 +14,26 @@ struct WorkoutView: View {
                 .font(.title)
             VStack(alignment: .leading, spacing: 8) {
                 HStack(alignment: .center) {
-                    Text("\(workout.activityNamePast) for \(workout.humanReadableDuration)")
+                    Text("\(workout.activityNamePast) \("workout.for".localized) \(workout.humanReadableDuration)")
                     Spacer()
                     Text(workout.humanReadableDistance)
                         .font(.caption)
                 }
                 HStack(spacing: 2) {
                     HStack(alignment: .bottom, spacing: 2) {
-                        Text("Date:")
+                        Text("label.date".localized)
                             .font(.caption2)
                         Text(workout.displayDate)
                     }
                     Spacer()
                     HStack(alignment: .bottom, spacing: 2) {
-                        Text("Start:")
+                        Text("label.start".localized)
                             .font(.caption2)
                         Text(workout.displayStartTime)
                     }
                     Spacer()
                     HStack(alignment: .bottom, spacing: 2) {
-                        Text("End:")
+                        Text("label.end".localized)
                             .font(.caption2)
                         Text(workout.displayEndTime)
                     }

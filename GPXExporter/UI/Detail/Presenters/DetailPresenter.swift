@@ -40,7 +40,7 @@ extension DetailPresenter: DetailPresenterProtocol {
         guard let locations = locations else { return }
         switch Exporter.export(locations) {
         case .failure:
-            router.showError("Failed to export")
+            router.showError("detail.gpx.export.error".localized)
         case let .success(path):
             router.showShare(for: path)
         }
@@ -53,7 +53,7 @@ private extension DetailPresenter {
             guard let self = self else { return }
             switch result {
             case .failure:
-                self.router.showError("Failed to fetch route")
+                self.router.showError("detail.route.fetch.error".localized)
             case let .success(locations):
                 self.locations = locations
                 self.view?.showExportButton()

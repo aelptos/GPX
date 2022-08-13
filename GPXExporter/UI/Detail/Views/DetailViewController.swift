@@ -39,6 +39,7 @@ final class DetailViewController: UIViewController {
 
 extension DetailViewController: DetailViewProtocol {
     func prepareView(with workout: HKWorkout) {
+        view.backgroundColor = .systemBackground
         setupNavigation()
         setupMap()
         setupBanner(with: workout)
@@ -64,7 +65,7 @@ extension DetailViewController: DetailViewProtocol {
 
 private extension DetailViewController {
     func setupNavigation() {
-        title = "Detail"
+        title = "detail.title".localized
         navigationItem.largeTitleDisplayMode = .never
     }
 

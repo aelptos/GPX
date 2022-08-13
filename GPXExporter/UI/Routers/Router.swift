@@ -41,8 +41,8 @@ extension Router: RouterProtocol {
 
     func showError(_ message: String) {
         DispatchQueue.main.async {
-            let controller = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-            controller.addAction(UIAlertAction(title: "Ok", style: .default))
+            let controller = UIAlertController(title: "error".localized, message: message, preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "ok".localized, style: .default))
             self.navigationController.present(controller, animated: true)
         }
     }

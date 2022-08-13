@@ -42,17 +42,17 @@ extension HKWorkout {
     var activityNamePast: String {
         switch workoutActivityType {
         case .hiking:
-            return "Hiked"
+            return "activity.hiked".localized
         case .running:
-            return "Ran"
+            return "activity.ran".localized
         case .walking:
-            return "Walked"
+            return "activity.walked".localized
         case .cycling:
-            return "Cycled"
+            return "activity.cycled".localized
         case .swimming:
-            return "Swam"
+            return "activity.swam".localized
         default:
-            return "Moved"
+            return "activity.moved".localized
         }
     }
 }

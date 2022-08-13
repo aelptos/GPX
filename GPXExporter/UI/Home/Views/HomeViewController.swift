@@ -87,11 +87,11 @@ extension HomeViewController: HomeViewProtocol {
             enableUserInteraction = false
             updateTableSourceForLoading()
         case .unauthorized:
-            updateTableSource(with: "Access to workouts is unauthorized\nPlease check your settings")
+            updateTableSource(with: "home.health.access.unauthorized.error".localized)
         case .unavailable:
-            updateTableSource(with: "Health is not available at this time\nPlease check again later")
+            updateTableSource(with: "home.health.access.unavailable.error".localized)
         case .failedFetch:
-            updateTableSource(with: "Failed to fetch workouts from Health\nPlease check again later")
+            updateTableSource(with: "home.workouts.fetch.error".localized)
         case let .results(workoutsPerYear):
             updateTableSource(with: workoutsPerYear)
         }
@@ -105,7 +105,7 @@ extension HomeViewController: HomeViewProtocol {
 
 private extension HomeViewController {
     func setupNavigation() {
-        title = "GPXExporter"
+        title = "app.name".localized
     }
 
     func setupPullDownToRefresh() {
@@ -183,7 +183,7 @@ private extension HomeViewController {
                     configurationBlock: { [weak self] in
                         guard let self = self else { return UITableViewCell() }
                         return self.cellFactory.makeMessageCell(
-                            with: "No workout found in Health\nGo for a walk or something",
+                            with: "home.workouts.empty".localized,
                             parent: self
                         )
                     },
