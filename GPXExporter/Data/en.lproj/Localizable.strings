@@ -14,6 +14,9 @@
 "home.health.access.unavailable.error" = "Health is not available at this time\nPlease check again later";
 "home.workouts.empty" = "No workout found in Health\nGo for a walk or something";
 "home.workouts.fetch.error" = "Failed to fetch workouts from Health\nPlease check again later";
+"info.credits" = "Yonic Surny (https://github.com/yonicsurny)\nWith a lot of support from StackOverflow and Google Search, also Apple Documentation";
+"info.credits.title" = "Credits";
+"info.description" = "This app allows to list Apple Health workouts, see details about those workouts, such as the date, duration, distance, activity type and most importantly the route. It's primary aim is to able the user to export the route as a .GPX file that can then be shared to be opened into any supporting software, such as Google My Maps.";
 "info.title" = "Info";
 "label.date" = "Date:";
 "label.end" = "End:";

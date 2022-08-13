@@ -44,6 +44,7 @@
 		8224C71628A7D5B7008CA973 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8224C71828A7D5B7008CA973 /* InfoPlist.strings */; };
 		8224C71C28A7DA2C008CA973 /* InfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C71B28A7DA2C008CA973 /* InfoPresenter.swift */; };
 		8224C72028A7DA90008CA973 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C71F28A7DA90008CA973 /* InfoViewController.swift */; };
+		82C3586728A7E0D7007F20E8 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3586628A7E0D7007F20E8 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		8224C71728A7D5B7008CA973 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8224C71B28A7DA2C008CA973 /* InfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPresenter.swift; sourceTree = "<group>"; };
 		8224C71F28A7DA90008CA973 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		82C3586628A7E0D7007F20E8 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				8224C71F28A7DA90008CA973 /* InfoViewController.swift */,
+				82C3586628A7E0D7007F20E8 /* InfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8224C6E728A6A7C5008CA973 /* TableSourceSection.swift in Sources */,
+				82C3586728A7E0D7007F20E8 /* InfoView.swift in Sources */,
 				8224C6E528A6A370008CA973 /* TableSource.swift in Sources */,
 				8224C6F228A6BB05008CA973 /* HKWorkout+Utils.swift in Sources */,
 				8224C6FF28A7675C008CA973 /* Date+Components.swift in Sources */,

@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol InfoViewProtocol: AnyObject {
     func prepareView()
@@ -34,6 +35,7 @@ extension InfoViewController: InfoViewProtocol {
     func prepareView() {
         view.backgroundColor = .systemBackground
         setupNavigation()
+        setupContent()
     }
 }
 
@@ -50,5 +52,17 @@ private extension InfoViewController {
 
     @objc func onCloseButtonTap() {
         presenter.didRequestClose()
+    }
+
+    func setupContent() {
+        let host = UIHostingController(rootView: InfoView())
+        addChild(host)
+        view.addSubview(host.view)
+        host.view.translatesAutoresizingMaskIntoConstraints = false
+        host.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        host.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        host.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        host.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        host.didMove(toParent: self)
     }
 }
