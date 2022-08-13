@@ -13,10 +13,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootViewController = composeRoot()
-        window?.rootViewController = rootViewController
+        window?.rootViewController = composeRoot()
         window?.makeKeyAndVisible()
-        application.setAlternateAppIconIfNeeded(rootViewController)
         return true
     }
 }

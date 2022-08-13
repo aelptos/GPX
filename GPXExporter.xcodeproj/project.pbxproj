@@ -39,7 +39,6 @@
 		8224C6FF28A7675C008CA973 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6FE28A7675C008CA973 /* Date+Components.swift */; };
 		8224C70228A767E3008CA973 /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C70128A767E3008CA973 /* Exporter.swift */; };
 		8224C70428A7B07D008CA973 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C70328A7B07D008CA973 /* WorkoutView.swift */; };
-		8224C70928A7CA35008CA973 /* UIApplication+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C70828A7CA35008CA973 /* UIApplication+Icon.swift */; };
 		8224C70E28A7D209008CA973 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C70D28A7D209008CA973 /* String+Localization.swift */; };
 		8224C71128A7D259008CA973 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8224C71328A7D259008CA973 /* Localizable.strings */; };
 		8224C71628A7D5B7008CA973 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8224C71828A7D5B7008CA973 /* InfoPlist.strings */; };
@@ -80,7 +79,6 @@
 		8224C6FE28A7675C008CA973 /* Date+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
 		8224C70128A767E3008CA973 /* Exporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exporter.swift; sourceTree = "<group>"; };
 		8224C70328A7B07D008CA973 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
-		8224C70828A7CA35008CA973 /* UIApplication+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Icon.swift"; sourceTree = "<group>"; };
 		8224C70D28A7D209008CA973 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		8224C71228A7D259008CA973 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8224C71728A7D5B7008CA973 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 		8224C6D028A69C03008CA973 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8224C70828A7CA35008CA973 /* UIApplication+Icon.swift */,
 				8224C6D328A69DAA008CA973 /* UITableView+ReusableCell.swift */,
 				8224C6D128A69C16008CA973 /* UITableViewCell+SwifUI.swift */,
 				8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */,
@@ -462,7 +459,6 @@
 				8224C68F28A66CCA008CA973 /* HomeViewController.swift in Sources */,
 				8224C6BE28A68E80008CA973 /* Router.swift in Sources */,
 				8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */,
-				8224C70928A7CA35008CA973 /* UIApplication+Icon.swift in Sources */,
 				8224C70228A767E3008CA973 /* Exporter.swift in Sources */,
 				8224C6F028A6BAD1008CA973 /* Double+Rounding.swift in Sources */,
 				8224C6A928A67312008CA973 /* HealthKitHelper.swift in Sources */,
@@ -625,10 +621,8 @@
 		8224C69C28A66CCB008CA973 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Dark";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = GPXExporter/GPXExporter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -658,10 +652,8 @@
 		8224C69D28A66CCB008CA973 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Dark";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = GPXExporter/GPXExporter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
