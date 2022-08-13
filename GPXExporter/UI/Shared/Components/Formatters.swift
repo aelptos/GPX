@@ -7,7 +7,13 @@ import Foundation
 struct Formatters {
     static let dateDisplayFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter
+    }()
+
+    static let timeDisplayFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
         return formatter
     }()
 

@@ -83,20 +83,19 @@ private extension DetailViewController {
         userButtonContainer.translatesAutoresizingMaskIntoConstraints = false
         userButtonContainer.topAnchor.constraint(equalTo: mapView.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
         userButtonContainer.leadingAnchor.constraint(equalTo: mapView.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
-        userButtonContainer.widthAnchor.constraint(equalToConstant: 42).isActive = true
-        userButtonContainer.heightAnchor.constraint(equalToConstant: 42).isActive = true
+        userButtonContainer.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        userButtonContainer.heightAnchor.constraint(equalToConstant: 40).isActive = true
         userButtonContainer.layer.cornerRadius = 5
-        userButtonContainer.backgroundColor = .systemBackground.withAlphaComponent(0.5)
+        userButtonContainer.backgroundColor = .secondarySystemBackground
 
         let userButton = MKUserTrackingButton(mapView: mapView)
         userButtonContainer.addSubview(userButton)
         userButton.translatesAutoresizingMaskIntoConstraints = false
-        userButton.centerXAnchor.constraint(equalTo: userButtonContainer.centerXAnchor).isActive = true
-        userButton.centerYAnchor.constraint(equalTo: userButtonContainer.centerYAnchor).isActive = true
+        userButton.constraintToAllSides(of: userButtonContainer)
     }
 
     func setupBanner(with workout: HKWorkout) {
-        let host = UIHostingController(rootView: WorkoutCellView(workout: workout))
+        let host = UIHostingController(rootView: WorkoutView(workout: workout))
         addChild(host)
         view.addSubview(host.view)
         host.view.translatesAutoresizingMaskIntoConstraints = false
@@ -106,6 +105,7 @@ private extension DetailViewController {
         host.view.heightAnchor.constraint(equalToConstant: 76).isActive = true
         host.didMove(toParent: self)
         host.view.layer.cornerRadius = 16
+        host.view.backgroundColor = .secondarySystemBackground
     }
 
     func setupLocationManager() {

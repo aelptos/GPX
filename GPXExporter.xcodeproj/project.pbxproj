@@ -30,7 +30,6 @@
 		8224C6E528A6A370008CA973 /* TableSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6E428A6A370008CA973 /* TableSource.swift */; };
 		8224C6E728A6A7C5008CA973 /* TableSourceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6E628A6A7C5008CA973 /* TableSourceSection.swift */; };
 		8224C6E928A6A7D5008CA973 /* TableSourceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6E828A6A7D5008CA973 /* TableSourceRow.swift */; };
-		8224C6EC28A6AAF8008CA973 /* WorkoutCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6EB28A6AAF8008CA973 /* WorkoutCellView.swift */; };
 		8224C6EE28A6ABAF008CA973 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6ED28A6ABAF008CA973 /* WorkoutTableViewCell.swift */; };
 		8224C6F028A6BAD1008CA973 /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6EF28A6BAD1008CA973 /* Double+Rounding.swift */; };
 		8224C6F228A6BB05008CA973 /* HKWorkout+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */; };
@@ -39,6 +38,7 @@
 		8224C6FD28A6DF78008CA973 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */; };
 		8224C6FF28A7675C008CA973 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C6FE28A7675C008CA973 /* Date+Components.swift */; };
 		8224C70228A767E3008CA973 /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C70128A767E3008CA973 /* Exporter.swift */; };
+		8224C70428A7B07D008CA973 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C70328A7B07D008CA973 /* WorkoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +67,6 @@
 		8224C6E428A6A370008CA973 /* TableSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSource.swift; sourceTree = "<group>"; };
 		8224C6E628A6A7C5008CA973 /* TableSourceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSourceSection.swift; sourceTree = "<group>"; };
 		8224C6E828A6A7D5008CA973 /* TableSourceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSourceRow.swift; sourceTree = "<group>"; };
-		8224C6EB28A6AAF8008CA973 /* WorkoutCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCellView.swift; sourceTree = "<group>"; };
 		8224C6ED28A6ABAF008CA973 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		8224C6EF28A6BAD1008CA973 /* Double+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounding.swift"; sourceTree = "<group>"; };
 		8224C6F128A6BB05008CA973 /* HKWorkout+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKWorkout+Utils.swift"; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		8224C6FE28A7675C008CA973 /* Date+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
 		8224C70128A767E3008CA973 /* Exporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exporter.swift; sourceTree = "<group>"; };
+		8224C70328A7B07D008CA973 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +215,7 @@
 				8224C6D628A69EBB008CA973 /* Controllers */,
 				8224C6D028A69C03008CA973 /* Extensions */,
 				8224C6CD28A69BB8008CA973 /* Protocols */,
+				8224C70528A7B4F2008CA973 /* Views */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -292,7 +293,6 @@
 		8224C6EA28A6AADB008CA973 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
-				8224C6EB28A6AAF8008CA973 /* WorkoutCellView.swift */,
 				8224C6ED28A6ABAF008CA973 /* WorkoutTableViewCell.swift */,
 			);
 			path = Workout;
@@ -304,6 +304,14 @@
 				8224C6F728A6C2B2008CA973 /* DetailPresenter.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		8224C70528A7B4F2008CA973 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8224C70328A7B07D008CA973 /* WorkoutView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,8 +415,8 @@
 				8224C6E928A6A7D5008CA973 /* TableSourceRow.swift in Sources */,
 				8224C6CC28A69BA5008CA973 /* LoadingTableViewCell.swift in Sources */,
 				8224C6E128A6A241008CA973 /* MessageCellView.swift in Sources */,
+				8224C70428A7B07D008CA973 /* WorkoutView.swift in Sources */,
 				8224C6DB28A69FEB008CA973 /* HomeViewCellFactory.swift in Sources */,
-				8224C6EC28A6AAF8008CA973 /* WorkoutCellView.swift in Sources */,
 				8224C6D928A69EDE008CA973 /* CellFactory.swift in Sources */,
 				8224C6D228A69C16008CA973 /* UITableViewCell+SwifUI.swift in Sources */,
 				8224C6FD28A6DF78008CA973 /* UIView+Constraints.swift in Sources */,

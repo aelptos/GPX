@@ -10,6 +10,14 @@ extension HKWorkout {
         Formatters.dateDisplayFormatter.string(from: endDate)
     }
 
+    var displayStartTime: String {
+        Formatters.timeDisplayFormatter.string(from: startDate)
+    }
+
+    var displayEndTime: String {
+        Formatters.timeDisplayFormatter.string(from: endDate)
+    }
+
     var humanReadableDuration: String {
         Formatters.durationFormatter.string(from: duration) ?? "-"
     }
@@ -28,6 +36,23 @@ extension HKWorkout {
             return "bicycle.circle.fill"
         default:
             return "questionmark.circle.fill"
+        }
+    }
+
+    var activityNamePast: String {
+        switch workoutActivityType {
+        case .hiking:
+            return "Hiked"
+        case .running:
+            return "Ran"
+        case .walking:
+            return "Walked"
+        case .cycling:
+            return "Cycled"
+        case .swimming:
+            return "Swam"
+        default:
+            return "Moved"
         }
     }
 }
