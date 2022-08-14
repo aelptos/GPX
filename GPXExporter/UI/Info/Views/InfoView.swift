@@ -24,12 +24,13 @@ struct InfoView: View {
                 }
                 .padding([.top, .bottom], 32)
                 VStack {
-                    Text("info.description".localized)
+                    Text(.init("info.description".localized))
                     Text("info.credits.title".localized)
                         .font(.subheadline)
+                        .underline()
                         .padding(.top, 32)
                         .padding(.bottom, 8)
-                    Text("info.credits".localized)
+                    Text(.init("info.credits".localized))
                         .font(.footnote)
                 }
             }
@@ -43,6 +44,6 @@ struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
         InfoView()
             .background(Color(UIColor.systemBackground))
-            .previewLayout(.fixed(width: 376, height: 600))
+            .previewLayout(.fixed(width: 376, height: 700))
     }
 }
