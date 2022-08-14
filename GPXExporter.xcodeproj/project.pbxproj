@@ -652,8 +652,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B9F9P95LAY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Required to access workouts and their routes";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required to show your position on the map";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "See InfoPlist.strings";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "See Info.plist.strings";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -683,8 +683,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B9F9P95LAY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Required to access workouts and their routes";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Required to show your position on the map";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "See InfoPlist.strings";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "See Info.plist.strings";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

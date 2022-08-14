@@ -1,1 +1,3 @@
 "CFBundleDisplayName" = "GPX Exporter";
+"NSHealthShareUsageDescription" = "Required to access workouts and their routes";
+"NSLocationWhenInUseUsageDescription" = "Required to show your position on the map";
