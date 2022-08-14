@@ -1,4 +1,4 @@
-# GPXEporter
+# GPX Exporter
 
 This iOS app lists **Apple Health** workouts and shows details about them, such as: the activity type, duration, distance, date, start and end time and _most importantly the route_.
 
