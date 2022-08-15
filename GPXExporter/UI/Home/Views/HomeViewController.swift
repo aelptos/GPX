@@ -15,6 +15,7 @@ final class HomeViewController: UITableViewController {
     private let cellFactory: HomeViewCellFactory
 
     private var tableSource = TableSource()
+    private var sectionIndexes = [String]()
 
     init(
         presenter: HomePresenterProtocol,
@@ -59,6 +60,10 @@ final class HomeViewController: UITableViewController {
         tableSource.section(for: section).headerText
     }
 
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        sectionIndexes.map { String($0.suffix(2)) }
+    }
+
     // MARK: - UITableView delegate
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         tableSource.row(for: indexPath).isSelectable ? indexPath : nil
@@ -82,6 +87,7 @@ extension HomeViewController: HomeViewProtocol {
     func update(_ viewModel: HomeViewModel) {
         var enableUserInteraction = true
         tableSource.prepareForReuse()
+        sectionIndexes.removeAll()
         switch viewModel {
         case .initial:
             enableUserInteraction = false
@@ -93,6 +99,7 @@ extension HomeViewController: HomeViewProtocol {
         case .failedFetch:
             updateTableSource(with: "home.workouts.fetch.error".localized)
         case let .results(workoutsPerYear):
+            sectionIndexes = workoutsPerYear.keys.sorted(by: { $0 > $1 })
             updateTableSource(with: workoutsPerYear)
         }
         DispatchQueue.main.async {
