@@ -11,7 +11,14 @@ struct WorkoutView: View {
     var body: some View {
         HStack(spacing: 16) {
             Image(systemName: workout.activityIconName)
-                .font(.title)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 24)
+                .background(
+                    Circle()
+                        .fill(Color(UIColor.tertiarySystemBackground))
+                        .frame(width: 40, height: 40)
+                )
             VStack(alignment: .leading, spacing: 8) {
                 HStack(alignment: .center) {
                     Text("\(workout.activityNamePast) \("workout.for".localized) \(workout.humanReadableDuration)")
@@ -20,20 +27,11 @@ struct WorkoutView: View {
                         .font(.caption)
                 }
                 HStack(spacing: 2) {
-                    HStack(alignment: .bottom, spacing: 2) {
-                        Text("label.date".localized)
-                            .font(.caption2)
-                        Text(workout.displayDate)
-                    }
+                    Text(workout.displayDate)
                     Spacer()
-                    HStack(alignment: .bottom, spacing: 2) {
-                        Text("label.start".localized)
-                            .font(.caption2)
+                    HStack(alignment: .center, spacing: 8) {
                         Text(workout.displayStartTime)
-                    }
-                    Spacer()
-                    HStack(alignment: .bottom, spacing: 2) {
-                        Text("label.end".localized)
+                        Image(systemName: "arrow.forward")
                             .font(.caption2)
                         Text(workout.displayEndTime)
                     }
