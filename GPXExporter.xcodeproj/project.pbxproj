@@ -440,6 +440,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		8224C6A228A66E63008CA973 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
