@@ -82,6 +82,7 @@ extension HomeViewController: HomeViewProtocol {
         setupNavigation()
         setupPullDownToRefresh()
         cellFactory.registerCells(forUseIn: tableView)
+        tableView.separatorInset = UIEdgeInsets.zero
     }
 
     func update(_ viewModel: HomeViewModel) {
