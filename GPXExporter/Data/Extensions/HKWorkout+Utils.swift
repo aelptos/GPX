@@ -30,12 +30,18 @@ extension HKWorkout {
 
     var activityIconName: String {
         switch workoutActivityType {
-        case .hiking, .running, .walking:
-            return "figure.walk.circle.fill"
+        case .hiking:
+            return "figure.hiking"
+        case .running:
+            return "figure.run"
+        case .walking:
+            return "figure.walk"
         case .cycling:
-            return "bicycle.circle.fill"
+            return "bicycle"
+        case .swimming:
+            return "figure.pool.swim"
         default:
-            return "questionmark.circle.fill"
+            return "questionmark"
         }
     }
 
