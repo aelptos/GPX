@@ -64,6 +64,11 @@ extension DetailViewController: DetailViewProtocol {
 }
 
 private extension DetailViewController {
+    enum AnnotationTitle: String {
+        case start
+        case finish
+    }
+
     func setupNavigation() {
         title = "detail.title".localized
         navigationItem.largeTitleDisplayMode = .never
@@ -142,6 +147,17 @@ private extension DetailViewController {
             edgePadding: edgePadding,
             animated: true
         )
+        if locations.count >= 2 {
+            addPin(for: locations.first!, title: .start)
+            addPin(for: locations.last!, title: .finish)
+        }
+    }
+
+    func addPin(for location: CLLocation, title: AnnotationTitle) {
+        let annotation = IdentifiablePointAnnotation()
+        annotation.identifier = title.rawValue
+        annotation.coordinate = location.coordinate
+        mapView.addAnnotation(annotation)
     }
 
     @objc func onShareButtonTap() {
@@ -167,5 +183,21 @@ extension DetailViewController: MKMapViewDelegate {
         renderer.lineCap = .round
         renderer.lineWidth = 3.0
         return renderer
+    }
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let identifier = (annotation as? IdentifiablePointAnnotation)?.identifier else { return nil }
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        switch identifier {
+        case AnnotationTitle.start.rawValue:
+            annotationView.markerTintColor = .green
+            annotationView.glyphImage = UIImage(systemName: "flag.checkered")
+        case AnnotationTitle.finish.rawValue:
+            annotationView.markerTintColor = .red
+            annotationView.glyphImage = UIImage(systemName: "flag.checkered.2.crossed")
+        default:
+            annotationView.markerTintColor = view.tintColor
+        }
+        return annotationView
     }
 }
