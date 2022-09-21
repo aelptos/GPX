@@ -44,6 +44,8 @@
 		8224C71C28A7DA2C008CA973 /* InfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C71B28A7DA2C008CA973 /* InfoPresenter.swift */; };
 		8224C72028A7DA90008CA973 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8224C71F28A7DA90008CA973 /* InfoViewController.swift */; };
 		822E5B6428D768BC00CECD4D /* IdentifiablePointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E5B6328D768BC00CECD4D /* IdentifiablePointAnnotation.swift */; };
+		822E5B6628D77E5B00CECD4D /* BearingPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E5B6528D77E5B00CECD4D /* BearingPointAnnotation.swift */; };
+		822E5B6928D7859D00CECD4D /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E5B6828D7859D00CECD4D /* UIImage+Color.swift */; };
 		82C3586728A7E0D7007F20E8 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3586628A7E0D7007F20E8 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,8 @@
 		8224C71B28A7DA2C008CA973 /* InfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPresenter.swift; sourceTree = "<group>"; };
 		8224C71F28A7DA90008CA973 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		822E5B6328D768BC00CECD4D /* IdentifiablePointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiablePointAnnotation.swift; sourceTree = "<group>"; };
+		822E5B6528D77E5B00CECD4D /* BearingPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearingPointAnnotation.swift; sourceTree = "<group>"; };
+		822E5B6828D7859D00CECD4D /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		82C3586628A7E0D7007F20E8 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +262,7 @@
 				8224C6D328A69DAA008CA973 /* UITableView+ReusableCell.swift */,
 				8224C6D128A69C16008CA973 /* UITableViewCell+SwifUI.swift */,
 				8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */,
+				822E5B6828D7859D00CECD4D /* UIImage+Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,11 +288,11 @@
 		8224C6E228A6A35D008CA973 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				822E5B6728D77E6B00CECD4D /* Annotations */,
 				8224C6D828A69EDE008CA973 /* CellFactory.swift */,
 				8224C6E428A6A370008CA973 /* TableSource.swift */,
 				8224C6E828A6A7D5008CA973 /* TableSourceRow.swift */,
 				8224C6E628A6A7C5008CA973 /* TableSourceSection.swift */,
-				822E5B6328D768BC00CECD4D /* IdentifiablePointAnnotation.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -370,6 +375,15 @@
 				82C3586628A7E0D7007F20E8 /* InfoView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		822E5B6728D77E6B00CECD4D /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				822E5B6528D77E5B00CECD4D /* BearingPointAnnotation.swift */,
+				822E5B6328D768BC00CECD4D /* IdentifiablePointAnnotation.swift */,
+			);
+			path = Annotations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +493,7 @@
 				8224C6E128A6A241008CA973 /* MessageCellView.swift in Sources */,
 				8224C70428A7B07D008CA973 /* WorkoutView.swift in Sources */,
 				8224C6DB28A69FEB008CA973 /* HomeViewCellFactory.swift in Sources */,
+				822E5B6928D7859D00CECD4D /* UIImage+Color.swift in Sources */,
 				822E5B6428D768BC00CECD4D /* IdentifiablePointAnnotation.swift in Sources */,
 				8224C70E28A7D209008CA973 /* String+Localization.swift in Sources */,
 				8224C6D928A69EDE008CA973 /* CellFactory.swift in Sources */,
@@ -488,6 +503,7 @@
 				8224C71C28A7DA2C008CA973 /* InfoPresenter.swift in Sources */,
 				8224C6BE28A68E80008CA973 /* Router.swift in Sources */,
 				8224C6BB28A68DB2008CA973 /* DetailViewController.swift in Sources */,
+				822E5B6628D77E5B00CECD4D /* BearingPointAnnotation.swift in Sources */,
 				8224C70228A767E3008CA973 /* Exporter.swift in Sources */,
 				8224C6F028A6BAD1008CA973 /* Double+Rounding.swift in Sources */,
 				8224C6A928A67312008CA973 /* HealthKitHelper.swift in Sources */,

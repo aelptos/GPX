@@ -147,6 +147,9 @@ private extension DetailViewController {
             edgePadding: edgePadding,
             animated: true
         )
+        if locations.count > 2 {
+            addBearingPins(Array(locations[1 ... locations.count - 1]))
+        }
         if locations.count >= 2 {
             addPin(for: locations.first!, title: .start)
             addPin(for: locations.last!, title: .finish)
@@ -154,10 +157,18 @@ private extension DetailViewController {
     }
 
     func addPin(for location: CLLocation, title: AnnotationTitle) {
-        let annotation = IdentifiablePointAnnotation()
-        annotation.identifier = title.rawValue
+        let annotation = IdentifiablePointAnnotation(identifier: title.rawValue)
         annotation.coordinate = location.coordinate
         mapView.addAnnotation(annotation)
+    }
+
+    func addBearingPins(_ locations: [CLLocation]) {
+        for (index, location) in locations.enumerated() {
+            if index % 100 != 0 { continue }
+            let annotation = BearingPointAnnotation(direction: location.course)
+            annotation.coordinate = location.coordinate
+            mapView.addAnnotation(annotation)
+        }
     }
 
     @objc func onShareButtonTap() {
@@ -186,18 +197,36 @@ extension DetailViewController: MKMapViewDelegate {
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let identifier = (annotation as? IdentifiablePointAnnotation)?.identifier else { return nil }
-        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: nil)
-        switch identifier {
-        case AnnotationTitle.start.rawValue:
-            annotationView.markerTintColor = .green
-            annotationView.glyphImage = UIImage(systemName: "flag.checkered")
-        case AnnotationTitle.finish.rawValue:
-            annotationView.markerTintColor = .red
-            annotationView.glyphImage = UIImage(systemName: "flag.checkered.2.crossed")
-        default:
-            annotationView.markerTintColor = view.tintColor
+        if let identifiableAnnotation = annotation as? IdentifiablePointAnnotation {
+            let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: nil)
+            switch identifiableAnnotation.identifier {
+            case AnnotationTitle.start.rawValue:
+                annotationView.markerTintColor = .green
+                annotationView.glyphImage = UIImage(systemName: "flag.checkered")
+            case AnnotationTitle.finish.rawValue:
+                annotationView.markerTintColor = .red
+                annotationView.glyphImage = UIImage(systemName: "flag.checkered.2.crossed")
+            default:
+                annotationView.markerTintColor = view.tintColor
+            }
+            return annotationView
         }
-        return annotationView
+        if let bearingAnnotation = annotation as? BearingPointAnnotation {
+            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "bearingAnnotation")
+            let imageView = UIImageView(image: UIImage(systemName: "location.north.fill"))
+            imageView.tintColor = .white
+            annotationView.addSubview(imageView)
+
+            var direction = bearingAnnotation.direction
+            direction = (direction > 180) ? 360 - direction : 0 - direction
+            annotationView.transform = CGAffineTransformMakeRotation(degreesToRadians(CGFloat(direction)))
+
+            return annotationView
+        }
+        return nil
+    }
+
+    func degreesToRadians(_ number: CGFloat) -> CGFloat {
+        return number * .pi / 180
     }
 }

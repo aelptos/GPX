@@ -6,5 +6,9 @@ import Foundation
 import MapKit
 
 final class IdentifiablePointAnnotation: MKPointAnnotation {
-    var identifier: String?
+    let identifier: String
+
+    init(identifier: String) {
+        self.identifier = identifier
+    }
 }
