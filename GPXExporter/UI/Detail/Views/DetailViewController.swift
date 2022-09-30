@@ -35,6 +35,14 @@ final class DetailViewController: UIViewController {
 
         presenter.viewDidLoad()
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if self.traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            refreshBearingAnnotations()
+        }
+    }
 }
 
 extension DetailViewController: DetailViewProtocol {
@@ -199,6 +207,12 @@ private extension DetailViewController {
     @objc func onShareButtonTap() {
         presenter.didRequestShare()
     }
+
+    func refreshBearingAnnotations() {
+        let annotations = mapView.annotations.compactMap { $0 as? BearingPointAnnotation }
+        mapView.removeAnnotations(annotations)
+        mapView.addAnnotations(annotations)
+    }
 }
 
 extension DetailViewController: CLLocationManagerDelegate {
@@ -239,7 +253,7 @@ extension DetailViewController: MKMapViewDelegate {
         if let bearingAnnotation = annotation as? BearingPointAnnotation {
             let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "bearingAnnotation")
             let imageView = UIImageView(image: UIImage(systemName: "location.north.fill"))
-            imageView.tintColor = .white
+            imageView.tintColor = traitCollection.userInterfaceStyle == .dark ? .white : .lightGray
             annotationView.addSubview(imageView)
             annotationView.transform = CGAffineTransformMakeRotation(degreesToRadians(CGFloat(bearingAnnotation.direction)))
             return annotationView
