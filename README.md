@@ -6,9 +6,9 @@ It's primary aim is to provide the ability to the user to generate and export th
 
 ## Compatibility
 
-* Built with Xcode 13.4.1 (13F100)
+* Built with Xcode 14.0.1 (14A400)
 * Supported devices: iPhone (portrait)
-* Deployment target: iOS 15
+* Deployment target: iOS 16.0
 * Swift 5
 
 ## Screenshot
