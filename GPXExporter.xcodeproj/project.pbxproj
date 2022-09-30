@@ -46,6 +46,7 @@
 		822E5B6428D768BC00CECD4D /* IdentifiablePointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E5B6328D768BC00CECD4D /* IdentifiablePointAnnotation.swift */; };
 		822E5B6628D77E5B00CECD4D /* BearingPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E5B6528D77E5B00CECD4D /* BearingPointAnnotation.swift */; };
 		822E5B6928D7859D00CECD4D /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E5B6828D7859D00CECD4D /* UIImage+Color.swift */; };
+		82A7E38028E743ED0078F7C9 /* View+Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A7E37F28E743ED0078F7C9 /* View+Condition.swift */; };
 		82C3586728A7E0D7007F20E8 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3586628A7E0D7007F20E8 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		822E5B6328D768BC00CECD4D /* IdentifiablePointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiablePointAnnotation.swift; sourceTree = "<group>"; };
 		822E5B6528D77E5B00CECD4D /* BearingPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearingPointAnnotation.swift; sourceTree = "<group>"; };
 		822E5B6828D7859D00CECD4D /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		82A7E37F28E743ED0078F7C9 /* View+Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Condition.swift"; sourceTree = "<group>"; };
 		82C3586628A7E0D7007F20E8 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -263,6 +265,7 @@
 				8224C6D128A69C16008CA973 /* UITableViewCell+SwifUI.swift */,
 				8224C6FC28A6DF78008CA973 /* UIView+Constraints.swift */,
 				822E5B6828D7859D00CECD4D /* UIImage+Color.swift */,
+				82A7E37F28E743ED0078F7C9 /* View+Condition.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				822E5B6428D768BC00CECD4D /* IdentifiablePointAnnotation.swift in Sources */,
 				8224C70E28A7D209008CA973 /* String+Localization.swift in Sources */,
 				8224C6D928A69EDE008CA973 /* CellFactory.swift in Sources */,
+				82A7E38028E743ED0078F7C9 /* View+Condition.swift in Sources */,
 				8224C6D228A69C16008CA973 /* UITableViewCell+SwifUI.swift in Sources */,
 				8224C6FD28A6DF78008CA973 /* UIView+Constraints.swift in Sources */,
 				8224C68F28A66CCA008CA973 /* HomeViewController.swift in Sources */,

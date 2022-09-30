@@ -112,17 +112,17 @@ private extension DetailViewController {
     }
 
     func setupBanner(with workout: HKWorkout) {
-        let host = UIHostingController(rootView: WorkoutView(workout: workout))
+        let host = UIHostingController(rootView: WorkoutView(workout: workout, vibrancy: true))
         addChild(host)
         view.addSubview(host.view)
         host.view.translatesAutoresizingMaskIntoConstraints = false
         host.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8).isActive = true
         host.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40).isActive = true
         host.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
-        host.view.heightAnchor.constraint(equalToConstant: 76).isActive = true
         host.didMove(toParent: self)
         host.view.layer.cornerRadius = 16
-        host.view.backgroundColor = .secondarySystemBackground
+        host.view.layer.masksToBounds = true
+        host.view.backgroundColor = .clear
     }
 
     func setupLocationManager() {

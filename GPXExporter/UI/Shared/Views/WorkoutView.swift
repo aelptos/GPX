@@ -7,6 +7,7 @@ import HealthKit
 
 struct WorkoutView: View {
     let workout: HKWorkout
+    let vibrancy: Bool
 
     var body: some View {
         HStack(spacing: 16) {
@@ -19,6 +20,7 @@ struct WorkoutView: View {
                         .fill(Color(UIColor.tertiarySystemBackground))
                         .frame(width: 40, height: 40)
                 )
+                .padding([.leading, .trailing], 4)
             VStack(alignment: .leading, spacing: 8) {
                 HStack(alignment: .center) {
                     Text("\(workout.activityNamePast) \("workout.for".localized) \(workout.humanReadableDuration)")
@@ -40,6 +42,9 @@ struct WorkoutView: View {
             }
         }
         .padding()
+        .if(vibrancy) { view in
+            view.background(.regularMaterial)
+        }
     }
 }
 
@@ -54,12 +59,11 @@ struct WorkoutView_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            WorkoutView(workout: sampleWorkout)
+            WorkoutView(workout: sampleWorkout, vibrancy: true)
                 .preferredColorScheme(.light)
-            WorkoutView(workout: sampleWorkout)
+            WorkoutView(workout: sampleWorkout, vibrancy: true)
                 .preferredColorScheme(.dark)
         }
-        .background(Color(UIColor.secondarySystemBackground))
         .cornerRadius(16)
         .padding()
         .previewLayout(.sizeThatFits)

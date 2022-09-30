@@ -11,7 +11,7 @@ final class WorkoutTableViewCell: UITableViewCell, ReusableCell {
 
     func configure(with workout: HKWorkout, parent: UIViewController) {
         insert(
-            UIHostingController(rootView: WorkoutView(workout: workout)),
+            UIHostingController(rootView: WorkoutView(workout: workout, vibrancy: false)),
             parent: parent
         )
         accessoryType = .disclosureIndicator
