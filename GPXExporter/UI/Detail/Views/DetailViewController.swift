@@ -47,8 +47,11 @@ extension DetailViewController: DetailViewProtocol {
     }
 
     func update(with locations: [CLLocation]) {
+        guard !locations.isEmpty else { return }
         DispatchQueue.main.async {
             self.drawRoute(with: locations)
+            self.drawDirectionArrows(with: locations)
+            self.addStartAndFinishPins(with: locations)
         }
     }
 
@@ -128,7 +131,6 @@ private extension DetailViewController {
     }
 
     func drawRoute(with locations: [CLLocation]) {
-        guard !locations.isEmpty else { return }
         let coordinates = locations.map { $0.coordinate }
         let overlay = MKPolyline(
             coordinates: coordinates,
@@ -147,28 +149,51 @@ private extension DetailViewController {
             edgePadding: edgePadding,
             animated: true
         )
-        if locations.count > 2 {
-            addBearingPins(Array(locations[1 ... locations.count - 1]))
-        }
-        if locations.count >= 2 {
-            addPin(for: locations.first!, title: .start)
-            addPin(for: locations.last!, title: .finish)
+    }
+
+    // See https://stackoverflow.com/questions/17829611/how-to-draw-an-arrow-between-two-points-on-the-map-mapkit
+    func drawDirectionArrows(with locations: [CLLocation]) {
+        guard !locations.isEmpty else { return }
+        var previous = locations[0]
+        var index = 100
+        while index < locations.count {
+            let current = locations[index]
+
+            let deltaLong = current.coordinate.longitude - previous.coordinate.longitude
+            let yComponent = sin(deltaLong) * cos(current.coordinate.latitude)
+            let xComponent = (cos(previous.coordinate.latitude) * sin(current.coordinate.latitude)) - (sin(previous.coordinate.latitude) * cos(current.coordinate.latitude) * cos(deltaLong))
+            let radians = atan2(yComponent, xComponent)
+            let degrees = radiansToDegrees(radians) + 360
+            let direction = fmod(degrees, 360)
+
+            let annotation = BearingPointAnnotation(direction: direction)
+            annotation.coordinate = current.coordinate
+            mapView.addAnnotation(annotation)
+
+            previous = current
+            index += 100
         }
     }
 
-    func addPin(for location: CLLocation, title: AnnotationTitle) {
+    func addStartAndFinishPins(with locations: [CLLocation]) {
+        guard locations.count >= 2 else { return }
+        addPin(for: locations.first, title: .start)
+        addPin(for: locations.last, title: .finish)
+    }
+
+    func addPin(for location: CLLocation?, title: AnnotationTitle) {
+        guard let location = location else { return }
         let annotation = IdentifiablePointAnnotation(identifier: title.rawValue)
         annotation.coordinate = location.coordinate
         mapView.addAnnotation(annotation)
     }
 
-    func addBearingPins(_ locations: [CLLocation]) {
-        for (index, location) in locations.enumerated() {
-            if index % 100 != 0 { continue }
-            let annotation = BearingPointAnnotation(direction: location.course)
-            annotation.coordinate = location.coordinate
-            mapView.addAnnotation(annotation)
-        }
+    func degreesToRadians(_ number: CGFloat) -> CGFloat {
+        return number * .pi / 180
+    }
+
+    func radiansToDegrees(_ number: CGFloat) -> CGFloat {
+        return number * 180 / .pi
     }
 
     @objc func onShareButtonTap() {
@@ -216,17 +241,9 @@ extension DetailViewController: MKMapViewDelegate {
             let imageView = UIImageView(image: UIImage(systemName: "location.north.fill"))
             imageView.tintColor = .white
             annotationView.addSubview(imageView)
-
-            var direction = bearingAnnotation.direction
-            direction = (direction > 180) ? 360 - direction : 0 - direction
-            annotationView.transform = CGAffineTransformMakeRotation(degreesToRadians(CGFloat(direction)))
-
+            annotationView.transform = CGAffineTransformMakeRotation(degreesToRadians(CGFloat(bearingAnnotation.direction)))
             return annotationView
         }
         return nil
-    }
-
-    func degreesToRadians(_ number: CGFloat) -> CGFloat {
-        return number * .pi / 180
     }
 }
