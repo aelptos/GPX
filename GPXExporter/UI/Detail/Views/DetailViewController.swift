@@ -83,15 +83,24 @@ private extension DetailViewController {
     func setupNavigation() {
         title = "detail.title".localized
         navigationItem.largeTitleDisplayMode = .never
+        resetNavigationBarAppearance()
+    }
+
+    func resetNavigationBarAppearance() {
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithDefaultBackground()
+        navigationItem.scrollEdgeAppearance = navigationBarAppearance
+        navigationItem.standardAppearance = navigationBarAppearance
+        navigationItem.compactAppearance = navigationBarAppearance
     }
 
     func setupMap() {
+        mapView.frame = view.bounds
         view.addSubview(mapView)
-        mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        mapView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mapView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        mapView.autoresizingMask = [
+            .flexibleWidth,
+            .flexibleHeight
+        ]
         mapView.delegate = self
         mapView.showsUserLocation = true
 
