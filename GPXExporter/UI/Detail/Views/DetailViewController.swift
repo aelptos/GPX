@@ -171,9 +171,10 @@ private extension DetailViewController {
     // See https://stackoverflow.com/questions/17829611/how-to-draw-an-arrow-between-two-points-on-the-map-mapkit
     func drawDirectionArrows(with locations: [CLLocation]) {
         guard !locations.isEmpty else { return }
-        var previous = locations[0]
-        var index = 100
-        while index < locations.count {
+        let stepsCount = 10
+        for index in 1 ..< stepsCount {
+            let index = (locations.count / stepsCount) * index
+            let previous = locations[index - 1]
             let current = locations[index]
 
             let deltaLong = current.coordinate.longitude - previous.coordinate.longitude
@@ -186,9 +187,6 @@ private extension DetailViewController {
             let annotation = BearingPointAnnotation(direction: direction)
             annotation.coordinate = current.coordinate
             mapView.addAnnotation(annotation)
-
-            previous = current
-            index += 100
         }
     }
 
