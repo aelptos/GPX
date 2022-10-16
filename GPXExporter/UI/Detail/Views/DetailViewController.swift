@@ -171,9 +171,11 @@ private extension DetailViewController {
     // See https://stackoverflow.com/questions/17829611/how-to-draw-an-arrow-between-two-points-on-the-map-mapkit
     func drawDirectionArrows(with locations: [CLLocation]) {
         guard !locations.isEmpty else { return }
+        let locationsCount = locations.count
+        guard locationsCount > 10 else { return }
         let stepsCount = 10
         for index in 1 ..< stepsCount {
-            let index = (locations.count / stepsCount) * index
+            let index = (locationsCount / stepsCount) * index
             let previous = locations[index - 1]
             let current = locations[index]
 
