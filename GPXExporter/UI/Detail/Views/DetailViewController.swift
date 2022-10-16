@@ -102,8 +102,12 @@ private extension DetailViewController {
             .flexibleHeight
         ]
         mapView.delegate = self
+        
         mapView.showsUserLocation = true
-
+        addUserButton()
+    }
+    
+    func addUserButton() {
         let userButtonContainer = UIView()
         view.addSubview(userButtonContainer)
         userButtonContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -112,12 +116,24 @@ private extension DetailViewController {
         userButtonContainer.widthAnchor.constraint(equalToConstant: 40).isActive = true
         userButtonContainer.heightAnchor.constraint(equalToConstant: 40).isActive = true
         userButtonContainer.layer.cornerRadius = 5
-        userButtonContainer.backgroundColor = .secondarySystemBackground
+        userButtonContainer.clipsToBounds = true
+
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
+        blurredEffectView.frame = userButtonContainer.bounds
+        blurredEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        userButtonContainer.addSubview(blurredEffectView)
+
+        let vibrancyEffect = UIVibrancyEffect(blurEffect: blurEffect)
+        let vibrancyEffectView = UIVisualEffectView(effect: vibrancyEffect)
+        vibrancyEffectView.frame = userButtonContainer.bounds
+        vibrancyEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurredEffectView.contentView.addSubview(vibrancyEffectView)
 
         let userButton = MKUserTrackingButton(mapView: mapView)
-        userButtonContainer.addSubview(userButton)
-        userButton.translatesAutoresizingMaskIntoConstraints = false
-        userButton.constraintToAllSides(of: userButtonContainer)
+        userButton.frame = userButtonContainer.bounds
+        userButton.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        vibrancyEffectView.contentView.addSubview(userButton)
     }
 
     func setupBanner(with workout: HKWorkout) {
