@@ -261,10 +261,14 @@ extension DetailViewController: MKMapViewDelegate {
         }
         if let bearingAnnotation = annotation as? BearingPointAnnotation {
             let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "bearingAnnotation")
-            let imageView = UIImageView(image: UIImage(systemName: "location.north.fill"))
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+            imageView.image = UIImage(systemName: "location.north.fill")
             imageView.tintColor = traitCollection.userInterfaceStyle == .dark ? .white : .lightGray
             annotationView.addSubview(imageView)
-            annotationView.transform = CGAffineTransformMakeRotation(degreesToRadians(CGFloat(bearingAnnotation.direction)))
+            let direction = bearingAnnotation.direction
+            var offset = direction > 180 ? 10 : -10
+            annotationView.transform = CGAffineTransformMakeRotation(degreesToRadians(CGFloat(direction)))
+            annotationView.centerOffset = CGPoint(x: 0, y: offset)
             return annotationView
         }
         return nil
