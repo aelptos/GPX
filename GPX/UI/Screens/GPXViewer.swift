@@ -12,6 +12,8 @@ struct GPXViewer: View {
         case route
     }
 
+    @EnvironmentObject var appState: AppState
+
     @State private var state: ScreenState = .noRoute
     @State private var route: MKPolyline?
     @State private var importFile = false
@@ -95,7 +97,18 @@ struct GPXViewer: View {
         .fileImporter(isPresented: $importFile, allowedContentTypes: [.init(filenameExtension: "gpx")!]) { result in
             do {
                 let fileUrl = try result.get()
-                try importGPX(from: fileUrl)
+                try importGPX(from: fileUrl, secure: true)
+            } catch {
+                importError.toggle()
+            }
+        }
+        .onChange(of: appState.openUrl) { url in
+            guard let url = url else {
+                importError.toggle()
+                return
+            }
+            do {
+                try importGPX(from: url, secure: false)
             } catch {
                 importError.toggle()
             }
@@ -104,8 +117,8 @@ struct GPXViewer: View {
 }
 
 private extension GPXViewer {
-    func importGPX(from url: URL) throws {
-        let coordinates = try GPXImportHelper.importGPX(from: url)
+    func importGPX(from url: URL, secure: Bool) throws {
+        let coordinates = try GPXImportHelper.importGPX(from: url, secure: secure)
         self.coordinates = coordinates
         route = MKPolyline(
             coordinates: coordinates,
