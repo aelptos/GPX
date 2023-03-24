@@ -17,6 +17,7 @@ struct WorkoutDetailsView: View {
     @State private var state: ScreenState = .initial
     @State private var route: MKPolyline?
     @State private var locations: [CLLocation]?
+    @State private var shareItem: GPXActivityItem?
     @State private var shareError = false
     @State private var isFullscreenMapShown = false
     @Namespace private var mapAnimation
@@ -88,6 +89,10 @@ struct WorkoutDetailsView: View {
                 }
             }
         }
+        .sheet(item: $shareItem) { item in
+            GPXActivityView(url: item.url)
+                .presentationDetents([.medium, .large])
+        }
         .alert("error".localized, isPresented: $shareError) {
             Button("ok".localized, role: .cancel) {}
         } message: {
@@ -131,8 +136,8 @@ private extension WorkoutDetailsView {
     func onShare() {
         guard let locations = locations else { return }
         do {
-            let path = try GPXExportHelper.export(locations)
-            UIActivityViewController.show(with: path)
+            let url = try GPXExportHelper.export(locations)
+            shareItem = GPXActivityItem(url: url)
         } catch {
             shareError.toggle()
         }

@@ -7,7 +7,7 @@ import SwiftUI
 @main
 struct GPXApp: App {
     @StateObject var state = AppState()
-    @State private var selectedTab = 0
+    @State private var selectedTab = "viewer"
 
     var body: some Scene {
         WindowGroup {
@@ -20,15 +20,18 @@ struct GPXApp: App {
                     .tabItem {
                         Label("viewer.title".localized, systemImage: "map")
                     }
+                    .tag("viewer")
+
                     NavigationStack {
                         WorkoutsView(healthKitHelper: HealthKitHelper())
                     }
                     .tabItem {
                         Label("workouts.title".localized, systemImage: "figure.run")
                     }
+                    .tag("workouts")
                 }
                 .onOpenURL { url in
-                    selectedTab = 0
+                    selectedTab = "viewer"
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         state.openUrl = url
                     }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		820A612B29CE3B5A00434641 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A612A29CE3B5A00434641 /* AppState.swift */; };
+		820A614129CE4FC100434641 /* GPXActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A614029CE4FC100434641 /* GPXActivityItem.swift */; };
+		820A614329CE4FDC00434641 /* GPXActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A614229CE4FDC00434641 /* GPXActivityView.swift */; };
 		82116D7429C786AC00F150F3 /* BearingPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82116D7329C786AC00F150F3 /* BearingPointAnnotation.swift */; };
 		823FB6E829C4D36700621C5B /* GPXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823FB6E729C4D36700621C5B /* GPXApp.swift */; };
 		823FB6EC29C4D36800621C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823FB6EB29C4D36800621C5B /* Assets.xcassets */; };
@@ -31,8 +33,6 @@
 		82D6A80729C5E14C0074B9C8 /* MockHealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6A80629C5E14C0074B9C8 /* MockHealthKitHelper.swift */; };
 		82D6A80A29C5E42F0074B9C8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6A80929C5E42F0074B9C8 /* MapView.swift */; };
 		82D6A80F29C5EA450074B9C8 /* View+Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6A80E29C5EA450074B9C8 /* View+Condition.swift */; };
-		82D6A81129C5EE660074B9C8 /* UIActivityViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6A81029C5EE660074B9C8 /* UIActivityViewController+Utils.swift */; };
-		82D6A81329C5EF8D0074B9C8 /* UIApplication+Windows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6A81229C5EF8D0074B9C8 /* UIApplication+Windows.swift */; };
 		82D6A81629C5F53A0074B9C8 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6A81529C5F53A0074B9C8 /* RouteView.swift */; };
 		82D6A81A29C6112F0074B9C8 /* CustomFullscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6A81929C6112F0074B9C8 /* CustomFullscreenView.swift */; };
 		82D6A81C29C615B80074B9C8 /* MKMultiPoint+Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6A81B29C615B80074B9C8 /* MKMultiPoint+Coordinates.swift */; };
@@ -52,6 +52,8 @@
 /* Begin PBXFileReference section */
 		820A612929CE382D00434641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		820A612A29CE3B5A00434641 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		820A614029CE4FC100434641 /* GPXActivityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXActivityItem.swift; sourceTree = "<group>"; };
+		820A614229CE4FDC00434641 /* GPXActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXActivityView.swift; sourceTree = "<group>"; };
 		82116D7329C786AC00F150F3 /* BearingPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BearingPointAnnotation.swift; sourceTree = "<group>"; };
 		823FB6E429C4D36700621C5B /* GPX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823FB6E729C4D36700621C5B /* GPXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXApp.swift; sourceTree = "<group>"; };
@@ -77,8 +79,6 @@
 		82D6A80629C5E14C0074B9C8 /* MockHealthKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHealthKitHelper.swift; sourceTree = "<group>"; };
 		82D6A80929C5E42F0074B9C8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		82D6A80E29C5EA450074B9C8 /* View+Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Condition.swift"; sourceTree = "<group>"; };
-		82D6A81029C5EE660074B9C8 /* UIActivityViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityViewController+Utils.swift"; sourceTree = "<group>"; };
-		82D6A81229C5EF8D0074B9C8 /* UIApplication+Windows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Windows.swift"; sourceTree = "<group>"; };
 		82D6A81529C5F53A0074B9C8 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		82D6A81929C6112F0074B9C8 /* CustomFullscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFullscreenView.swift; sourceTree = "<group>"; };
 		82D6A81B29C615B80074B9C8 /* MKMultiPoint+Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMultiPoint+Coordinates.swift"; sourceTree = "<group>"; };
@@ -195,6 +195,7 @@
 			children = (
 				82D6A83129C6E8420074B9C8 /* Map */,
 				82D6A81929C6112F0074B9C8 /* CustomFullscreenView.swift */,
+				820A614229CE4FDC00434641 /* GPXActivityView.swift */,
 				82D6A7E529C4F5210074B9C8 /* MessageView.swift */,
 				82D6A7EF29C50A6E0074B9C8 /* WorkoutView.swift */,
 			);
@@ -224,8 +225,9 @@
 		82D6A7F429C50B7D0074B9C8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				82D6A7F529C50B7D0074B9C8 /* Formatters.swift */,
 				820A612A29CE3B5A00434641 /* AppState.swift */,
+				82D6A7F529C50B7D0074B9C8 /* Formatters.swift */,
+				820A614029CE4FC100434641 /* GPXActivityItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -243,8 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				82D6A81B29C615B80074B9C8 /* MKMultiPoint+Coordinates.swift */,
-				82D6A81029C5EE660074B9C8 /* UIActivityViewController+Utils.swift */,
-				82D6A81229C5EF8D0074B9C8 /* UIApplication+Windows.swift */,
 				82D6A80E29C5EA450074B9C8 /* View+Condition.swift */,
 			);
 			path = Extensions;
@@ -387,18 +387,18 @@
 				82D6A7E929C4FA0F0074B9C8 /* GPXExportHelper.swift in Sources */,
 				82D6A82E29C6E6C30074B9C8 /* GPXWaypoint+Coordinate.swift in Sources */,
 				82D6A81A29C6112F0074B9C8 /* CustomFullscreenView.swift in Sources */,
-				82D6A81129C5EE660074B9C8 /* UIActivityViewController+Utils.swift in Sources */,
 				82D6A83329C6E84D0074B9C8 /* AnnotationTitle.swift in Sources */,
 				82D6A83529C6E8610074B9C8 /* MapViewDelegate.swift in Sources */,
 				82D6A80229C5C7EA0074B9C8 /* Date+Components.swift in Sources */,
 				82D6A7FD29C5C4310074B9C8 /* StringInterpolation+Fromatting.swift in Sources */,
+				820A614329CE4FDC00434641 /* GPXActivityView.swift in Sources */,
 				82D6A83B29C6EA9E0074B9C8 /* MapViewAnnotationsHelper.swift in Sources */,
 				82D6A80A29C5E42F0074B9C8 /* MapView.swift in Sources */,
 				823FB70229C4D56E00621C5B /* WorkoutsView.swift in Sources */,
 				82D6A7F829C50B9A0074B9C8 /* Double+Rounding.swift in Sources */,
 				82D6A7ED29C4FA400074B9C8 /* HealthKitHelperProtocol.swift in Sources */,
 				82D6A7EB29C4FA140074B9C8 /* HealthKitHelper.swift in Sources */,
-				82D6A81329C5EF8D0074B9C8 /* UIApplication+Windows.swift in Sources */,
+				820A614129CE4FC100434641 /* GPXActivityItem.swift in Sources */,
 				82D6A80F29C5EA450074B9C8 /* View+Condition.swift in Sources */,
 				82D6A80729C5E14C0074B9C8 /* MockHealthKitHelper.swift in Sources */,
 				823FB6E829C4D36700621C5B /* GPXApp.swift in Sources */,
