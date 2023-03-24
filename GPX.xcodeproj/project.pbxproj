@@ -555,6 +555,7 @@
 				DEVELOPMENT_TEAM = B9F9P95LAY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "See InfoPlist.strings";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "See Info.plist.strings";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -571,11 +572,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aelptos.GPX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -591,6 +592,7 @@
 				DEVELOPMENT_TEAM = B9F9P95LAY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "See InfoPlist.strings";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "See Info.plist.strings";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -607,11 +609,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aelptos.GPX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
