@@ -92,6 +92,7 @@ struct WorkoutDetailsView: View {
         .sheet(item: $shareItem) { item in
             GPXActivityView(url: item.url)
                 .presentationDetents([.medium, .large])
+                .edgesIgnoringSafeArea(.bottom)
         }
         .alert("error".localized, isPresented: $shareError) {
             Button("ok".localized, role: .cancel) {}
